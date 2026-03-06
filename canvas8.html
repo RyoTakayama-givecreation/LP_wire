@@ -1,0 +1,1653 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ギブクリエーション | メーカー特化型ハイクラス転職エージェント</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: "#4a249d", // 指定の紫
+                dark: "#2f1763",
+                light: "#e6e5ef",
+                accent: "#7c52d6", // 少し明るめの紫アクセント
+              },
+              base: {
+                dark: "#1a1a24",
+                gray: "#f1f3f7",
+                light: "#f8f9fc", // コンサルトーンのライトグレー
+              },
+              cta: {
+                DEFAULT: "#ea580c", // エンジニアに刺さる強いオレンジ
+                hover: "#c2410c",
+              },
+              text: {
+                primary: "#1a1a24", // ほぼ黒
+                secondary: "#52525b",
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', "sans-serif"],
+              en: ['"Montserrat"', "sans-serif"],
+            },
+            letterSpacing: {
+              widest: ".15em",
+              superwide: ".25em",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        color: #1a1a24;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-en {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      /* ボタンホバーエフェクト */
+      .btn-highclass {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .btn-highclass::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: all 0.5s ease;
+      }
+      .btn-highclass:hover::before {
+        left: 100%;
+      }
+      .btn-header-cta::before,
+      .btn-header-cta::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /* スクロールバー */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f9fc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a249d;
+        border-radius: 10px;
+      }
+
+      /* 精密さを表す方眼紙グリッド (紫基調) */
+      .bg-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(74, 36, 157, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(74, 36, 157, 0.06) 1px,
+            transparent 1px
+          );
+        background-size: 32px 32px;
+      }
+
+      /* セクション背景タイポグラフィ */
+      .section-title-bg {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.03;
+        font-size: 5rem;
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        pointer-events: none;
+        color: #4a249d;
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+      .fade-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* アコーディオン (FAQ用) */
+      details > summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-sans">
+    <!-- ヘッダー -->
+    <header
+      class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+      id="header"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="font-en text-brand font-bold tracking-widest text-lg flex items-center gap-2"
+          >
+            <div
+              class="w-6 h-6 bg-brand text-white rounded-sm flex items-center justify-center text-xs"
+            >
+              G
+            </div>
+            GIVE CREATION
+          </div>
+        </div>
+        <nav
+          class="hidden lg:flex gap-8 items-center text-xs font-bold tracking-widest text-gray-500 font-en"
+        >
+          <a href="#features" class="hover:text-brand transition">REASON</a>
+          <a href="#jobs" class="hover:text-brand transition">JOBS</a>
+          <a href="#cases" class="hover:text-brand transition">CASES</a>
+          <a href="#consultant" class="hover:text-brand transition"
+            >CONSULTANT</a
+          >
+        </nav>
+        <div class="hidden md:block">
+          <a
+            href="#form"
+            class="bg-cta hover:bg-cta-hover text-white px-6 py-2.5 rounded text-xs font-bold tracking-wider transition btn-highclass btn-header-cta shadow-sm shadow-cta/20"
+          >
+            無料キャリア相談
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- FV (白×紫グリッド) -->
+      <section
+        class="relative bg-white pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden"
+      >
+        <div class="absolute inset-0 bg-grid z-0"></div>
+
+        <div
+          class="max-w-[1200px] mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <div class="space-y-6 pt-10 lg:pt-0">
+            <!-- 誰向けかの明記 -->
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span
+                class="border border-brand/20 bg-white text-brand px-3 py-1.5 rounded text-xs font-bold tracking-widest shadow-sm"
+                >想定年収 700万〜1,200万円以上</span
+              >
+              <span
+                class="border border-brand/20 bg-white text-brand px-3 py-1.5 rounded text-xs font-bold tracking-widest shadow-sm"
+                >生産技術 / 品質保証 / 開発</span
+              >
+            </div>
+
+            <div
+              class="inline-flex items-center gap-4 bg-white/95 rounded px-4 py-3 border border-gray-200 shadow-sm"
+            >
+              <i data-lucide="award" class="w-8 h-8 text-brand"></i>
+              <div>
+                <div
+                  class="text-xs text-brand font-bold tracking-widest font-en"
+                >
+                  HIGH CLASS SUPPORT
+                </div>
+                <div class="text-sm font-black text-text-primary mt-0.5">
+                  メーカー転職 合格内定率
+                  <span class="text-cta text-lg">No.1</span>
+                </div>
+              </div>
+            </div>
+
+            <h1
+              class="text-text-primary text-4xl sm:text-5xl lg:text-[3.5rem] font-black leading-[1.2] tracking-tight"
+            >
+              あなたの技術力は、<br />
+              正しく評価されていますか？
+            </h1>
+
+            <p
+              class="text-text-secondary text-sm sm:text-base leading-relaxed max-w-lg font-medium tracking-wide border-l-4 border-brand pl-4"
+            >
+              メーカー特化だから見えてくる、本当の市場価値。<br />
+              「なんとなく悩んでいる」から始まる、ロジカルなキャリア設計。
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <a
+                href="#form"
+                onclick="setIntent('転職相談をしたい')"
+                class="bg-cta hover:bg-cta-hover text-white text-center py-4 px-8 rounded text-sm font-bold tracking-wider transition btn-highclass w-full sm:w-auto flex items-center justify-center gap-2 shadow-lg shadow-cta/30"
+              >
+                無料キャリア相談を予約
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#form"
+                onclick="setIntent('まずは求人情報を見たい')"
+                class="bg-white border border-brand text-brand hover:bg-brand-light text-center py-4 px-8 rounded text-sm font-bold tracking-wider transition w-full sm:w-auto flex items-center justify-center gap-2"
+              >
+                まずは求人情報を見る
+              </a>
+            </div>
+
+            <p class="text-[10px] text-gray-500 mt-2">
+              ※ITエンジニア・未経験の方への求人紹介は行っておりません。
+            </p>
+          </div>
+
+          <!-- FV 右側インフォグラフィック (白ベース・精密トーン) -->
+          <div class="relative hidden lg:block h-[500px]">
+            <div
+              class="absolute inset-0 bg-white border border-gray-200 shadow-2xl p-8 flex flex-col justify-between z-20 rounded-sm"
+            >
+              <div
+                class="flex items-center justify-between border-b border-gray-100 pb-4 mb-6"
+              >
+                <div
+                  class="font-en text-xs tracking-widest text-brand font-bold"
+                >
+                  SALARY EVALUATION DATA
+                </div>
+                <div class="flex gap-1">
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                </div>
+              </div>
+
+              <div class="space-y-8 flex-1 flex flex-col justify-center">
+                <!-- Before -->
+                <div class="relative">
+                  <div
+                    class="flex justify-between text-xs font-bold text-gray-500 mb-2"
+                  >
+                    <span>CURRENT (生産技術 / 35歳)</span>
+                    <span class="font-en">¥6,500,000</span>
+                  </div>
+                  <div
+                    class="w-full bg-base-light h-8 border border-gray-200 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 left-0 h-full bg-gray-300 w-[60%]"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- 矢印 -->
+                <div class="flex justify-center text-brand">
+                  <i data-lucide="arrow-down" class="w-6 h-6"></i>
+                </div>
+
+                <!-- After -->
+                <div class="relative">
+                  <div
+                    class="flex justify-between text-xs font-bold text-brand mb-2"
+                  >
+                    <span>OFFER (大手グローバルメーカー)</span>
+                    <span class="font-en text-lg">¥9,200,000</span>
+                  </div>
+                  <div
+                    class="w-full bg-base-light h-8 border border-gray-200 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 left-0 h-full bg-brand w-[85%] relative"
+                    >
+                      <!-- ストライプアニメーション用 -->
+                      <div
+                        class="absolute inset-0 opacity-20"
+                        style="
+                          background-image: repeating-linear-gradient(
+                            45deg,
+                            transparent,
+                            transparent 10px,
+                            #fff 10px,
+                            #fff 20px
+                          );
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute -right-4 -top-3 bg-cta text-white text-[10px] font-bold px-2 py-1 shadow-lg transform rotate-3"
+                  >
+                    +270万 UP
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 text-[10px] text-gray-400 text-right">
+                ※支援実績データに基づく一例
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 「あなたに似た人」の提示 -->
+      <!-- <section class="bg-brand-light py-8 border-y border-brand/20">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div
+              class="text-sm font-bold text-brand whitespace-nowrap flex items-center gap-2"
+            >
+              <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+              このページを見ている方のデータ
+            </div>
+
+            <div
+              class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-text-secondary w-full md:w-auto"
+            >
+              <div
+                class="bg-white border border-brand/20 px-4 py-2 flex items-center gap-2 shadow-sm rounded-sm"
+              >
+                <span class="text-brand font-en">AGE</span> 35〜42歳
+              </div>
+              <div
+                class="bg-white border border-brand/20 px-4 py-2 flex items-center gap-2 shadow-sm rounded-sm"
+              >
+                <span class="text-brand font-en">JOB</span>
+                生産技術・品質保証・開発
+              </div>
+              <div
+                class="bg-white border border-brand/20 px-4 py-2 flex items-center gap-2 shadow-sm rounded-sm"
+              >
+                <span class="text-brand font-en">INCOME</span> 580〜720万円
+              </div>
+              <div
+                class="bg-white border border-brand/20 px-4 py-2 flex items-center gap-2 shadow-sm rounded-sm"
+              >
+                <span class="text-brand font-en">STATUS</span>
+                なんとなく悩んでいる
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- 社会的証明 (ロゴ) -->
+      <section class="py-12 bg-white border-b border-gray-100">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <p
+            class="text-center text-xs font-bold text-gray-400 mb-6 tracking-[0.2em] font-en"
+          >
+            INTRODUCTION EXAMPLES
+          </p>
+          <div
+            class="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-50 grayscale hover:grayscale-0 transition duration-500"
+          >
+            <div
+              class="font-en font-black text-xl tracking-tighter text-gray-800"
+            >
+              COMPANY A
+            </div>
+            <div
+              class="font-en font-bold text-xl tracking-widest text-gray-800 border-2 border-gray-800 px-2 py-1"
+            >
+              TECH B.
+            </div>
+            <div class="font-en font-medium text-2xl text-gray-800 italic">
+              Manufacturer C
+            </div>
+            <div
+              class="font-en font-black text-xl text-gray-800 flex items-center gap-1"
+            >
+              <div class="w-3 h-3 bg-brand rounded-full"></div>
+              CORP D
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 再現性の数値 -->
+      <section class="py-24 bg-base-light relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-50"></div>
+        <div class="max-w-[1000px] mx-auto px-6 relative z-10">
+          <div class="text-center mb-12">
+            <h2
+              class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+            >
+              FACTS & DATA
+            </h2>
+            <h3
+              class="text-2xl md:text-3xl font-black text-text-primary mb-4 tracking-tight"
+            >
+              「絞っているからこそ強い」を可視化。
+            </h3>
+            <p class="text-text-secondary text-sm">
+              自画自賛ではなく、データに基づいたファクト。これがハイクラス専門のクオリティです。
+            </p>
+          </div>
+
+          <div
+            class="bg-white border border-gray-200 shadow-xl overflow-hidden rounded-sm"
+          >
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="bg-gray-50 border-b border-gray-200">
+                  <th class="p-5 md:p-6 font-bold text-gray-500 w-1/3">指標</th>
+                  <th
+                    class="p-5 md:p-6 font-bold text-gray-500 w-1/3 border-l border-gray-200"
+                  >
+                    一般エージェント
+                  </th>
+                  <th
+                    class="p-5 md:p-6 font-black text-brand w-1/3 bg-brand-light/50 border-l border-brand/20 text-base md:text-lg"
+                  >
+                    GIVE CREATION
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="[&>tr]:border-b [&>tr]:border-gray-100 last:[&>tr]:border-none"
+              >
+                <tr>
+                  <td class="p-5 md:p-6 font-bold text-text-primary">
+                    取扱求人
+                  </td>
+                  <td class="p-5 md:p-6 text-gray-500 border-l border-gray-200">
+                    10万件以上（ノイズ多数）
+                  </td>
+                  <td
+                    class="p-5 md:p-6 font-bold text-text-primary bg-brand-light/50 border-l border-brand/20"
+                  >
+                    メーカー厳選 非公開のみ
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-5 md:p-6 font-bold text-text-primary">
+                    担当者の専門性
+                  </td>
+                  <td class="p-5 md:p-6 text-gray-500 border-l border-gray-200">
+                    業界不問 / 若手メイン
+                  </td>
+                  <td
+                    class="p-5 md:p-6 font-bold text-text-primary bg-brand-light/50 border-l border-brand/20"
+                  >
+                    メーカー領域特化 / 出身者
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-5 md:p-6 font-bold text-text-primary">
+                    書類通過率
+                  </td>
+                  <td class="p-5 md:p-6 text-gray-500 border-l border-gray-200">
+                    業界平均 36%
+                  </td>
+                  <td
+                    class="p-5 md:p-6 font-black text-2xl text-brand bg-brand-light/50 border-l border-brand/20"
+                  >
+                    82<span class="text-sm font-normal">%</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-5 md:p-6 font-bold text-text-primary">
+                    平均年収UP幅
+                  </td>
+                  <td class="p-5 md:p-6 text-gray-500 border-l border-gray-200">
+                    約30万円
+                  </td>
+                  <td
+                    class="p-5 md:p-6 font-black text-2xl text-brand bg-brand-light/50 border-l border-brand/20"
+                  >
+                    +120<span class="text-sm font-normal">万円</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 特徴セクション (白基調×紫アクセント) -->
+      <section
+        id="features"
+        class="py-32 bg-white relative overflow-hidden border-b border-gray-200"
+      >
+        <div
+          class="section-title-bg text-brand top-10 right-4 lg:right-10 text-right"
+        >
+          WHY CHOOSE US
+        </div>
+
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+          <div
+            class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-8"
+          >
+            <div>
+              <h2
+                class="font-en text-sm font-bold tracking-superwide text-brand mb-4 flex items-center gap-3"
+              >
+                <span class="w-8 h-px bg-brand"></span> WHY CHOOSE US
+              </h2>
+              <h3
+                class="text-3xl md:text-5xl font-black text-text-primary leading-tight"
+              >
+                ギブクリエーションが<br />選ばれる4つの理由
+              </h3>
+            </div>
+            <p
+              class="text-text-secondary text-sm font-medium max-w-sm leading-relaxed"
+            >
+              業界に精通したコンサルタントと独自の強固なネットワークが、ハイクラス層の理想のキャリア実現を約束します。
+            </p>
+          </div>
+
+          <div class="space-y-32">
+            <!-- REASON 01 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+                  alt="メーカー特化"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 left-0 bg-white border-b border-r border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  01<span class="text-gray-300">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  SPECIALTY
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  メーカー特化による<br />圧倒的な専門性
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >メーカー転職に完全特化した支援体制</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span
+                      >業界／職種理解が深く、技術職・専門職にも対応可能</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span>RPOなど採用コンサルティング支援多数</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- REASON 02 -->
+            <div
+              class="flex flex-col md:flex-row-reverse items-center gap-12 group"
+            >
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1560520653-9e0e4cb4ebdf?q=80&w=800&auto=format&fit=crop"
+                  alt="独自ネットワーク"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-white border-b border-l border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  02<span class="text-gray-300">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pr-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  NETWORK
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  独自ネットワークによる<br />情報優位性
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >メーカー企業との独自コネクションを保有</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span>非公開求人／内部情報の提供が可能</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span>選考突破のための“再現性あるノウハウ”を蓄積</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- REASON 03 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                  alt="キャリア設計"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 left-0 bg-white border-b border-r border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  03<span class="text-gray-300">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  CONSULTING
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  キャリア設計視点の<br />コンサルティング
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >転職ありきではなく中長期のキャリアを設計</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span>内定獲得とその先まで見据えた転職支援</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-gray-300 flex-shrink-0"
+                    ></i>
+                    <span
+                      >単なる求人紹介ではなく“コンサルタント”として伴走</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 非公開求人例 -->
+      <section
+        id="jobs"
+        class="py-24 bg-base-light relative overflow-hidden border-b border-gray-200"
+      >
+        <div class="absolute inset-0 bg-grid opacity-50"></div>
+        <div class="max-w-[1000px] mx-auto px-6 relative z-10">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+          >
+            <div>
+              <h2
+                class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+              >
+                EXCLUSIVE JOBS
+              </h2>
+              <h3 class="text-3xl font-black text-text-primary leading-tight">
+                一般公開されない<br />「本当に良い求人」に出会える
+              </h3>
+            </div>
+          </div>
+
+          <div class="border-t-2 border-brand">
+            <!-- Job Item 1 -->
+            <div
+              class="py-8 border-b border-gray-200 bg-white px-6 hover:bg-brand-light/30 transition-colors group flex flex-col md:flex-row gap-6 md:items-start cursor-pointer"
+              onclick="document.getElementById('form').scrollIntoView()"
+            >
+              <div class="md:w-1/4">
+                <span
+                  class="inline-block border border-cta text-cta px-2 py-0.5 text-[10px] font-bold tracking-wider mb-2"
+                  >非公開求人</span
+                >
+                <div
+                  class="text-lg font-bold text-text-primary group-hover:text-brand transition-colors"
+                >
+                  生産技術<br /><span class="text-sm text-gray-500 font-normal"
+                    >（管理職候補）</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-1/4">
+                <div class="text-xs text-gray-400 font-en tracking-widest mb-1">
+                  ANNUAL SALARY
+                </div>
+                <div class="text-2xl font-en font-bold text-brand">
+                  8.0M
+                  <span class="text-sm font-sans font-normal text-gray-500"
+                    >- 11.0M JPY</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-2/4 text-sm text-text-secondary leading-relaxed">
+                <span class="text-text-primary font-bold block mb-1"
+                  >大手メーカー</span
+                >
+                上流工程の企画・設計 / 組織改善マネジメント /
+                大型案件の推進リーダー。中核メンバーとしての採用。
+                <div
+                  class="mt-4 p-3 bg-brand/5 border border-brand/20 text-xs text-text-primary rounded-sm"
+                >
+                  <span class="font-bold text-brand"
+                    >💡 こんな方におすすめ：</span
+                  ><br />現場のリーダーから組織マネジメントへ挑戦したい方、年収800万円の壁を越えたい方
+                </div>
+              </div>
+            </div>
+
+            <!-- Job Item 2 -->
+            <div
+              class="py-8 border-b border-gray-200 bg-white px-6 hover:bg-brand-light/30 transition-colors group flex flex-col md:flex-row gap-6 md:items-start cursor-pointer"
+              onclick="document.getElementById('form').scrollIntoView()"
+            >
+              <div class="md:w-1/4">
+                <span
+                  class="inline-block border border-cta text-cta px-2 py-0.5 text-[10px] font-bold tracking-wider mb-2"
+                  >非公開求人</span
+                >
+                <div
+                  class="text-lg font-bold text-text-primary group-hover:text-brand transition-colors"
+                >
+                  品質保証<br /><span class="text-sm text-gray-500 font-normal"
+                    >（スペシャリスト）</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-1/4">
+                <div class="text-xs text-gray-400 font-en tracking-widest mb-1">
+                  ANNUAL SALARY
+                </div>
+                <div class="text-2xl font-en font-bold text-brand">
+                  7.0M
+                  <span class="text-sm font-sans font-normal text-gray-500"
+                    >- 9.5M JPY</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-2/4 text-sm text-text-secondary leading-relaxed">
+                <span class="text-text-primary font-bold block mb-1"
+                  >グローバルメーカー</span
+                >
+                品質体制の再構築 / 国内外の監査対応 /
+                海外拠点との連携業務。英語力を活かせる環境。
+                <div
+                  class="mt-4 p-3 bg-brand/5 border border-brand/20 text-xs text-text-primary rounded-sm"
+                >
+                  <span class="font-bold text-brand"
+                    >💡 こんな方におすすめ：</span
+                  ><br />海外拠点との折衝経験を積みたい方、グローバルスタンダードな品質管理に携わりたい方
+                </div>
+              </div>
+            </div>
+
+            <!-- Job Item 3 -->
+            <div
+              class="py-8 border-b border-gray-200 bg-white px-6 hover:bg-brand-light/30 transition-colors group flex flex-col md:flex-row gap-6 md:items-start cursor-pointer"
+              onclick="document.getElementById('form').scrollIntoView()"
+            >
+              <div class="md:w-1/4">
+                <span
+                  class="inline-block border border-cta text-cta px-2 py-0.5 text-[10px] font-bold tracking-wider mb-2"
+                  >非公開求人</span
+                >
+                <div
+                  class="text-lg font-bold text-text-primary group-hover:text-brand transition-colors"
+                >
+                  新規事業開発<br /><span
+                    class="text-sm text-gray-500 font-normal"
+                    >（技術企画）</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-1/4">
+                <div class="text-xs text-gray-400 font-en tracking-widest mb-1">
+                  ANNUAL SALARY
+                </div>
+                <div class="text-2xl font-en font-bold text-brand">
+                  7.5M
+                  <span class="text-sm font-sans font-normal text-gray-500"
+                    >- 10.0M JPY</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-2/4 text-sm text-text-secondary leading-relaxed">
+                <span class="text-text-primary font-bold block mb-1"
+                  >急成長メーカー</span
+                >
+                次世代製品の開発戦略 / 新規事業の企画立案 /
+                部門横断プロジェクト推進。経営陣直下ポジション。
+                <div
+                  class="mt-4 p-3 bg-brand/5 border border-brand/20 text-xs text-text-primary rounded-sm"
+                >
+                  <span class="font-bold text-brand"
+                    >💡 こんな方におすすめ：</span
+                  ><br />既存技術の延長ではなく、ゼロイチの企画段階から裁量を持って開発をリードしたい方
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- コンサルタント紹介 (白基調に移動) -->
+      <section
+        id="consultant"
+        class="py-24 bg-white border-b border-gray-200 relative overflow-hidden"
+      >
+        <div class="section-title-bg text-brand top-10 left-4 lg:left-10">
+          CONSULTANTS
+        </div>
+
+        <div class="max-w-[1000px] mx-auto px-6 relative z-10">
+          <div class="text-center mb-16">
+            <h2
+              class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+            >
+              PROFESSIONALS
+            </h2>
+            <h3 class="text-3xl font-black text-text-primary leading-tight">
+              あなたの技術を理解できる人間が、<br />担当します。
+            </h3>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Consultant 1 -->
+            <div
+              class="group border border-gray-200 bg-white shadow-sm hover:shadow-lg transition duration-300"
+            >
+              <div
+                class="aspect-[4/3] bg-base-light overflow-hidden relative border-b border-gray-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=400&auto=format&fit=crop"
+                  class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500 transform group-hover:scale-105"
+                />
+                <div
+                  class="absolute bottom-0 left-0 bg-brand text-white text-[10px] font-bold px-3 py-1.5 tracking-widest"
+                >
+                  担当支援実績：247件
+                </div>
+              </div>
+              <div class="p-6">
+                <div
+                  class="text-[10px] font-bold text-gray-500 mb-1 tracking-wider"
+                >
+                  元・大手自動車メーカー 生産技術
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-text-primary">
+                  山田 健太
+                  <span class="text-xs font-en text-gray-400 ml-1"
+                    >K. Yamada</span
+                  >
+                </h4>
+                <p class="text-sm text-text-secondary leading-relaxed mb-4">
+                  現場の解像度が高く、職務経歴書に現れない「真の技術スキル」を言語化し、企業へダイレクトに提案します。
+                </p>
+                <div
+                  class="text-xs text-gray-500 border-t border-gray-100 pt-3"
+                >
+                  <span class="font-bold text-brand">得意領域:</span>
+                  機械・生産技術
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 2 -->
+            <div
+              class="group border border-gray-200 bg-white shadow-sm hover:shadow-lg transition duration-300"
+            >
+              <div
+                class="aspect-[4/3] bg-base-light overflow-hidden relative border-b border-gray-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+                  class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500 transform group-hover:scale-105"
+                />
+                <div
+                  class="absolute bottom-0 left-0 bg-brand text-white text-[10px] font-bold px-3 py-1.5 tracking-widest"
+                >
+                  担当支援実績：198件
+                </div>
+              </div>
+              <div class="p-6">
+                <div
+                  class="text-[10px] font-bold text-gray-500 mb-1 tracking-wider"
+                >
+                  元・総合電機メーカー 設計開発
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-text-primary">
+                  佐藤 亮介
+                  <span class="text-xs font-en text-gray-400 ml-1"
+                    >R. Sato</span
+                  >
+                </h4>
+                <p class="text-sm text-text-secondary leading-relaxed mb-4">
+                  次世代技術の動向を把握し、成長企業や新規事業ポジションへの「キャリアチェンジ」提案を得意とします。
+                </p>
+                <div
+                  class="text-xs text-gray-500 border-t border-gray-100 pt-3"
+                >
+                  <span class="font-bold text-brand">得意領域:</span>
+                  電気・制御設計
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 3 -->
+            <div
+              class="group border border-gray-200 bg-white shadow-sm hover:shadow-lg transition duration-300"
+            >
+              <div
+                class="aspect-[4/3] bg-base-light overflow-hidden relative border-b border-gray-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+                  class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500 transform group-hover:scale-105"
+                />
+                <div
+                  class="absolute bottom-0 left-0 bg-brand text-white text-[10px] font-bold px-3 py-1.5 tracking-widest"
+                >
+                  担当支援実績：156件
+                </div>
+              </div>
+              <div class="p-6">
+                <div
+                  class="text-[10px] font-bold text-gray-500 mb-1 tracking-wider"
+                >
+                  品質保証・品質管理 専門コンサルタント
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-text-primary">
+                  鈴木 真理
+                  <span class="text-xs font-en text-gray-400 ml-1"
+                    >M. Suzuki</span
+                  >
+                </h4>
+                <p class="text-sm text-text-secondary leading-relaxed mb-4">
+                  グローバル展開を進める企業での「英語力を活かしたポジション」や「マネジメント候補」の提案に定評があります。
+                </p>
+                <div
+                  class="text-xs text-gray-500 border-t border-gray-100 pt-3"
+                >
+                  <span class="font-bold text-brand">得意領域:</span>
+                  品質保証・品質管理
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 転職決定事例 -->
+      <section id="cases" class="py-24 bg-base-light border-b border-gray-200">
+        <div class="max-w-[1000px] mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2
+              class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+            >
+              SUCCESS CASES
+            </h2>
+            <h3 class="text-3xl font-black text-text-primary leading-tight">
+              メーカー転職の成功事例
+            </h3>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 事例1 -->
+            <div
+              class="border border-gray-200 bg-white rounded-sm p-6 hover:shadow-lg transition duration-300 relative overflow-hidden group"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-1 bg-brand transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></div>
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-base-light flex items-center justify-center text-gray-400 border border-gray-200 overflow-hidden"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale opacity-60"
+                  />
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-gray-500 tracking-wider">
+                    32歳 / 生産技術
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-base-light p-4 mb-6 flex items-center justify-between border border-gray-100"
+              >
+                <div>
+                  <div class="text-[10px] text-gray-500 font-bold mb-1">
+                    BEFORE
+                  </div>
+                  <div class="text-sm font-en font-bold text-gray-500">
+                    ¥6,200,000
+                  </div>
+                </div>
+                <i data-lucide="arrow-right" class="w-5 h-5 text-brand"></i>
+                <div class="text-right">
+                  <div class="text-[10px] text-brand font-bold mb-1">AFTER</div>
+                  <div class="text-xl font-en font-black text-text-primary">
+                    ¥7,800,000
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-text-secondary leading-relaxed">
+                選考企業ごとの緻密な対策で面接通過率が飛躍的に向上。現職の不満を解消し、裁量のある希望に近い環境への転職に成功。
+              </p>
+            </div>
+
+            <!-- 事例2 -->
+            <div
+              class="border border-gray-200 bg-white rounded-sm p-6 hover:shadow-lg transition duration-300 relative overflow-hidden group"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-1 bg-brand transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></div>
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-base-light flex items-center justify-center text-gray-400 border border-gray-200 overflow-hidden"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale opacity-60"
+                  />
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-gray-500 tracking-wider">
+                    38歳 / 品質保証
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-base-light p-4 mb-6 flex items-center justify-between border border-gray-100"
+              >
+                <div>
+                  <div class="text-[10px] text-gray-500 font-bold mb-1">
+                    BEFORE
+                  </div>
+                  <div class="text-sm font-en font-bold text-gray-500">
+                    ¥7,300,000
+                  </div>
+                </div>
+                <i data-lucide="arrow-right" class="w-5 h-5 text-brand"></i>
+                <div class="text-right">
+                  <div class="text-[10px] text-brand font-bold mb-1">AFTER</div>
+                  <div class="text-xl font-en font-black text-text-primary">
+                    ¥9,200,000
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-text-secondary leading-relaxed">
+                転職ありきではなく「5年後どうなりたいか」を見据えたキャリア提案により、大手から成長企業への納得感の高い意思決定を実現。
+              </p>
+            </div>
+
+            <!-- 事例3 -->
+            <div
+              class="border border-gray-200 bg-white rounded-sm p-6 hover:shadow-lg transition duration-300 relative overflow-hidden group"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-1 bg-brand transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></div>
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-base-light flex items-center justify-center text-gray-400 border border-gray-200 overflow-hidden"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale opacity-60"
+                  />
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-gray-500 tracking-wider">
+                    29歳 / 技術開発
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-base-light p-4 mb-6 flex items-center justify-between border border-gray-100"
+              >
+                <div>
+                  <div class="text-[10px] text-gray-500 font-bold mb-1">
+                    BEFORE
+                  </div>
+                  <div class="text-sm font-en font-bold text-gray-500">
+                    ¥5,400,000
+                  </div>
+                </div>
+                <i data-lucide="arrow-right" class="w-5 h-5 text-brand"></i>
+                <div class="text-right">
+                  <div class="text-[10px] text-brand font-bold mb-1">AFTER</div>
+                  <div class="text-xl font-en font-black text-text-primary">
+                    ¥6,900,000
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-text-secondary leading-relaxed">
+                多忙な在職中でも進めやすいよう、面談の夜間・休日対応や企業との連絡代行を行い、負担を最小化して内定を獲得。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-24 bg-white border-b border-gray-200">
+        <div class="max-w-[800px] mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-text-primary mb-2">
+              よくある質問
+            </h2>
+            <p class="text-sm text-gray-500">
+              ご相談前の不安や疑問にお答えします。
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <details
+              class="group bg-base-light border border-gray-200 p-6 rounded-sm [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer text-text-primary"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  本当にすべて無料ですか？料金はかかりませんか？
+                </div>
+                <span class="transition group-open:rotate-180">
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-gray-400"
+                  ></i>
+                </span>
+              </summary>
+              <div
+                class="text-gray-600 text-sm mt-4 pl-7 flex items-start gap-3 border-t border-gray-200 pt-4"
+              >
+                <span class="text-brand font-en font-bold">A.</span>
+                はい、ご相談から求人紹介、面接対策、条件交渉まで、求職者様は「完全無料」でご利用いただけます。企業側からの紹介手数料で運営しております。
+              </div>
+            </details>
+            <details
+              class="group bg-base-light border border-gray-200 p-6 rounded-sm [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer text-text-primary"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  まだ転職するか決めていませんが、相談だけでも良いですか？
+                </div>
+                <span class="transition group-open:rotate-180"
+                  ><i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-gray-400"
+                  ></i
+                ></span>
+              </summary>
+              <div
+                class="text-gray-600 text-sm mt-4 pl-7 flex items-start gap-3 border-t border-gray-200 pt-4"
+              >
+                <span class="text-brand font-en font-bold">A.</span>
+                もちろんです。現在の市場価値の確認や、5年後を見据えたキャリアプランの棚卸しといった情報収集段階から多くの方にご利用いただいております。無理な転職の強要は一切いたしません。
+              </div>
+            </details>
+            <details
+              class="group bg-base-light border border-gray-200 p-6 rounded-sm [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer text-text-primary"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  登録すると、現職の会社に転職活動がバレませんか？
+                </div>
+                <span class="transition group-open:rotate-180"
+                  ><i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-gray-400"
+                  ></i
+                ></span>
+              </summary>
+              <div
+                class="text-gray-600 text-sm mt-4 pl-7 flex items-start gap-3 border-t border-gray-200 pt-4"
+              >
+                <span class="text-brand font-en font-bold">A.</span>
+                ご安心ください。個人情報は厳重に管理しており、ご本人の許可なく企業に情報が開示されることは絶対にありません。
+              </div>
+            </details>
+            <details
+              class="group bg-base-light border border-gray-200 p-6 rounded-sm [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer text-text-primary"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  しつこく電話やメールが来ないか心配です。
+                </div>
+                <span class="transition group-open:rotate-180"
+                  ><i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-gray-400"
+                  ></i
+                ></span>
+              </summary>
+              <div
+                class="text-gray-600 text-sm mt-4 pl-7 flex items-start gap-3 border-t border-gray-200 pt-4"
+              >
+                <span class="text-brand font-en font-bold">A.</span>
+                当社では、求職者様のペースに合わせたサポートを徹底しております。過度な連絡や、希望条件に合わない求人の大量送信などは行いませんのでご安心ください。
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- フォームセクション -->
+      <section id="form" class="py-24 bg-base-light relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid opacity-50 z-0"></div>
+        <div class="max-w-[800px] mx-auto px-6 relative z-10">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-black text-text-primary mb-4 tracking-tight leading-snug"
+            >
+              まず、話すだけでいい。<br />
+              <span class="text-xl md:text-2xl font-bold text-gray-500"
+                >転職するかどうかは、その後で決めてください。</span
+              >
+            </h2>
+            <div
+              class="flex flex-wrap justify-center gap-4 text-xs font-bold text-brand mt-6"
+            >
+              <span
+                class="flex items-center gap-1 bg-white border border-brand/20 px-3 py-1.5 rounded-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-brand"></i> 初回相談
+                完全無料</span
+              >
+              <span
+                class="flex items-center gap-1 bg-white border border-brand/20 px-3 py-1.5 rounded-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-brand"></i>
+                45分オンライン</span
+              >
+              <span
+                class="flex items-center gap-1 bg-white border border-brand/20 px-3 py-1.5 rounded-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-brand"></i>
+                強引な勧誘なし</span
+              >
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 shadow-xl">
+            <div class="bg-brand p-8 text-center relative overflow-hidden">
+              <h2
+                class="relative z-10 text-xl font-black text-white tracking-widest font-en"
+              >
+                ENTRY FORM
+              </h2>
+            </div>
+
+            <form class="p-8 md:p-12">
+              <!-- プログレスバー -->
+              <div class="flex items-center justify-between mb-8 relative px-4">
+                <div
+                  class="absolute left-4 right-4 top-1/2 h-px bg-gray-200 -z-10 -translate-y-1/2"
+                ></div>
+                <div
+                  id="progress-bar"
+                  class="absolute left-4 top-1/2 w-1/2 h-px bg-brand transition-all duration-300 -z-10 -translate-y-1/2"
+                ></div>
+                <div
+                  id="step1-indicator"
+                  class="w-6 h-6 rounded-full bg-brand text-white flex items-center justify-center font-bold text-[10px] ring-4 ring-white border border-brand"
+                >
+                  1
+                </div>
+                <div
+                  id="step2-indicator"
+                  class="w-6 h-6 rounded-full bg-white text-gray-400 flex items-center justify-center font-bold text-[10px] ring-4 ring-white border border-gray-200 transition-colors duration-300"
+                >
+                  2
+                </div>
+              </div>
+
+              <!-- ================= STEP 1 ================= -->
+              <div
+                id="step1-content"
+                class="space-y-6 transition-opacity duration-300"
+              >
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >希望内容 <span class="text-cta ml-1">*</span></label
+                  >
+                  <select
+                    id="intentSelect"
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition cursor-pointer appearance-none"
+                    style="
+                      background-image: url(&quot;data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a249d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 1rem top 50%;
+                      background-size: 0.65rem auto;
+                    "
+                  >
+                    <option value="転職相談をしたい">
+                      まずはキャリアについて相談したい
+                    </option>
+                    <option value="まずは求人情報を見たい">
+                      どのような求人があるか見てみたい
+                    </option>
+                  </select>
+                </div>
+
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >現在の職種 <span class="text-cta ml-1">*</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="例: 生産技術 / 品質保証"
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                  />
+                </div>
+
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >メールアドレス <span class="text-cta ml-1">*</span></label
+                  >
+                  <input
+                    type="email"
+                    placeholder="example@email.com"
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                  />
+                </div>
+
+                <div class="pt-4 text-center">
+                  <button
+                    type="button"
+                    onclick="goToStep2()"
+                    class="w-full bg-brand hover:bg-brand-dark text-white py-4 font-bold tracking-widest transition btn-highclass rounded-sm shadow-md shadow-brand/20"
+                  >
+                    次へ進む (STEP 1/2)
+                  </button>
+                </div>
+              </div>
+
+              <!-- ================= STEP 2 ================= -->
+              <div
+                id="step2-content"
+                class="space-y-6 hidden opacity-0 transition-opacity duration-300"
+              >
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >氏名 <span class="text-cta ml-1">*</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="山田 太郎"
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                  />
+                </div>
+
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >電話番号
+                    <span class="text-gray-400 text-xs ml-1 font-normal"
+                      >任意</span
+                    ></label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="090-xxxx-xxxx"
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                  />
+                </div>
+
+                <div class="border-b border-gray-100 pb-6">
+                  <label class="block text-sm font-bold text-text-primary mb-2"
+                    >希望時期
+                    <span class="text-gray-400 text-xs ml-1 font-normal"
+                      >任意</span
+                    ></label
+                  >
+                  <select
+                    class="w-full bg-white border border-gray-300 p-4 text-sm focus:border-brand focus:ring-1 focus:ring-brand outline-none transition cursor-pointer appearance-none"
+                    style="
+                      background-image: url(&quot;data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a249d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 1rem top 50%;
+                      background-size: 0.65rem auto;
+                    "
+                  >
+                    <option>すぐに</option>
+                    <option>3か月以内</option>
+                    <option>未定</option>
+                  </select>
+                </div>
+
+                <div class="pt-6 text-center">
+                  <p class="text-xs text-gray-500 mb-6 font-bold">
+                    個人情報の取り扱いに同意の上、送信してください。
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                      type="button"
+                      onclick="goToStep1()"
+                      class="w-full sm:w-1/3 bg-white border border-gray-300 text-gray-600 hover:bg-gray-50 py-4 font-bold transition text-sm"
+                    >
+                      戻る
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full sm:w-2/3 bg-cta hover:bg-cta-hover text-white py-4 font-bold tracking-widest transition btn-highclass shadow-lg shadow-cta/30 rounded-sm"
+                    >
+                      無料で相談を申し込む
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-brand-dark text-gray-400 py-12 text-xs border-t border-brand font-en tracking-wider"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="font-bold text-sm text-white flex items-center gap-2">
+          <div
+            class="w-5 h-5 bg-brand-light text-brand rounded-sm flex items-center justify-center text-[10px]"
+          >
+            G
+          </div>
+          GIVE CREATION
+        </div>
+        <div class="flex gap-6 font-sans font-medium">
+          <a href="#" class="hover:text-white transition">運営会社</a>
+          <a href="#" class="hover:text-white transition"
+            >プライバシーポリシー</a
+          >
+        </div>
+        <p>&copy; Give Creation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div
+      class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3 flex gap-2 z-50"
+    >
+      <a
+        href="#form"
+        class="flex-1 bg-cta hover:bg-cta-hover text-white text-center py-3.5 rounded-sm text-sm font-bold tracking-wider btn-highclass shadow-sm shadow-cta/20"
+      >
+        無料相談（45分）
+      </a>
+    </div>
+
+    <script>
+      lucide.createIcons();
+
+      // ヘッダースクロール
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("bg-white", "shadow-sm");
+          header.classList.remove("bg-white/95");
+        } else {
+          header.classList.remove("bg-white", "shadow-sm");
+          header.classList.add("bg-white/95");
+        }
+      });
+
+      function setIntent(value) {
+        const intentSelect = document.getElementById("intentSelect");
+        if (intentSelect) {
+          for (let i = 0; i < intentSelect.options.length; i++) {
+            if (intentSelect.options[i].value === value) {
+              intentSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+
+      function goToStep2() {
+        const step1 = document.getElementById("step1-content");
+        const step2 = document.getElementById("step2-content");
+        const bar = document.getElementById("progress-bar");
+        const ind2 = document.getElementById("step2-indicator");
+
+        step1.style.opacity = 0;
+        setTimeout(() => {
+          step1.classList.add("hidden");
+          step2.classList.remove("hidden");
+          setTimeout(() => {
+            step2.style.opacity = 1;
+            bar.style.width = "100%";
+            ind2.classList.remove(
+              "bg-white",
+              "text-gray-400",
+              "border-gray-200",
+            );
+            ind2.classList.add("bg-brand", "text-white", "border-brand");
+          }, 50);
+        }, 300);
+      }
+
+      function goToStep1() {
+        const step1 = document.getElementById("step1-content");
+        const step2 = document.getElementById("step2-content");
+        const bar = document.getElementById("progress-bar");
+        const ind2 = document.getElementById("step2-indicator");
+
+        step2.style.opacity = 0;
+        setTimeout(() => {
+          step2.classList.add("hidden");
+          step1.classList.remove("hidden");
+          setTimeout(() => {
+            step1.style.opacity = 1;
+            bar.style.width = "50%";
+            ind2.classList.add("bg-white", "text-gray-400", "border-gray-200");
+            ind2.classList.remove("bg-brand", "text-white", "border-brand");
+          }, 50);
+        }, 300);
+      }
+    </script>
+  </body>
+</html>

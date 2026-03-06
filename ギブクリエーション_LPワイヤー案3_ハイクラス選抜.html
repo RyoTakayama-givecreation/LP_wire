@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ギブクリエーション | LPワイヤー案3（ハイクラス選抜）</title>
+  <style>
+    :root{
+      --bg:#f4f5f9;--surface:#ffffff;--ink:#151828;--sub:#5a6079;--line:#d9dcec;
+      --brand:#1f2a56;--brand2:#0f4c81;--cta:#d9480f;--gold:#d4a017;--max:1120px;--r:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--ink);background:
+      radial-gradient(1000px 550px at 95% -15%,#dde3ff 0%,transparent 60%),
+      radial-gradient(900px 500px at -10% -15%,#f5ecd3 0%,transparent 60%),var(--bg)}
+    .c{width:min(var(--max),92%);margin:0 auto} section{padding:56px 0}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 24px rgba(21,24,40,.06)}
+    header{position:sticky;top:0;background:rgba(244,245,249,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+    .hr{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:10px}
+    .logo{font-weight:800}.logo small{display:block;color:var(--sub);font-size:.78rem;font-weight:500}
+    nav{display:flex;gap:12px;flex-wrap:wrap} nav a{text-decoration:none;color:var(--ink);font-size:.88rem;font-weight:700}
+    .btn{display:inline-block;text-decoration:none;padding:11px 16px;border-radius:999px;font-weight:800;font-size:.9rem}
+    .btn.main{background:var(--cta);color:#fff}.btn.sub{background:#fff;color:var(--brand2);border:1px solid #c3c9e7}
+    h1,h2,h3{margin:0 0 12px;line-height:1.3} h1{font-size:clamp(1.6rem,2.8vw,2.3rem)} h2{font-size:clamp(1.24rem,2.1vw,1.7rem)}
+    p{margin:0 0 10px;color:#222a43;line-height:1.65}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .hero-main{padding:30px;background:linear-gradient(145deg,#fff,#f7f9ff)}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#202b55;color:#ecf1ff;border:1px solid #3a487f;font-size:.78rem;font-weight:800}
+    .chips{margin:14px 0}
+    .chip{display:inline-block;margin:0 8px 8px 0;padding:6px 10px;border-radius:999px;border:1px solid #e2c46c;background:#fff9e4;color:#6e5308;font-size:.79rem;font-weight:800}
+    .cta-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+    .form{padding:22px}.f{margin-bottom:10px}.f label{display:block;font-size:.82rem;font-weight:700;margin-bottom:4px}
+    .f input,.f select{width:100%;border:1px solid #ccd2ec;border-radius:10px;padding:10px;font-size:.9rem}
+    .g{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+    .box{background:#fff;border:1px solid #dce0f1;border-radius:12px;padding:14px}
+    .kpi{font-size:1.1rem;font-weight:800;color:var(--brand2)}
+    .tier{border-left:4px solid var(--gold)}
+    .band{background:linear-gradient(120deg,#1f2a56,#0f4c81);padding:24px;border-radius:var(--r);color:#edf4ff}
+    .band p{color:#dce9ff}
+    footer{border-top:1px solid var(--line);padding:24px 0 84px;color:var(--sub);font-size:.82rem}
+    .mfix{display:none;position:fixed;left:0;right:0;bottom:0;padding:8px;background:rgba(255,255,255,.96);border-top:1px solid #d9ddef;gap:8px;z-index:20}
+    .mfix .btn{flex:1;text-align:center}
+    @media (max-width:960px){.hero{grid-template-columns:1fr}.g2,.g3,.g4{grid-template-columns:1fr}nav{display:none}}
+    @media (max-width:760px){.mfix{display:flex}.hr .btn{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="c hr">
+      <div class="logo">ギブクリエーション<small>ハイクラスメーカー転職支援</small></div>
+      <nav>
+        <a href="#proof">実績・信頼</a>
+        <a href="#jobs">高年収求人例</a>
+        <a href="#quality">支援品質</a>
+        <a href="#partner">担当コンサル</a>
+      </nav>
+      <a class="btn main cv-main" href="#form">無料相談</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="c hero">
+        <article class="card hero-main">
+          <span class="tag">ハイクラスメーカー転職</span>
+          <h1>年収帯を上げるだけでなく、<br>次の10年を見据えた選択へ。</h1>
+          <p>上流ポジション・非公開求人・選考内部情報をもとに、ハイクラス層向けの転職意思決定を支援します。</p>
+          <div class="chips">
+            <span class="chip">想定年収 800-1,500万円帯</span>
+            <span class="chip">Google口コミ 4.9 / 5.0（約600件）</span>
+            <span class="chip">メーカー特化コンサル</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn main cv-main" href="#form">無料でハイクラス相談をする</a>
+            <a class="btn sub cv-sub" href="#form">まずは情報収集する</a>
+          </div>
+        </article>
+        <aside id="form" class="card form">
+          <h3>ハイクラス相談フォーム</h3>
+          <div class="f"><label>希望内容（必須）</label><select id="intentSelect"><option>転職相談をしたい</option><option>まずは求人情報を見たい</option></select></div>
+          <div class="f"><label>現年収（必須）</label><select><option>700万円以上</option><option>800万円以上</option><option>1,000万円以上</option></select></div>
+          <div class="f"><label>現職ポジション（必須）</label><input type="text" placeholder="例: 生産技術マネージャー"></div>
+          <div class="f"><label>氏名（必須）</label><input type="text"></div>
+          <div class="f"><label>メール（必須）</label><input type="email"></div>
+          <a class="btn main" style="width:100%;text-align:center" href="#">無料相談を予約する</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="c">
+        <h2>大手・有力メーカーでの支援実績</h2>
+        <div class="g g4">
+          <div class="box">企業ロゴ</div><div class="box">企業ロゴ</div><div class="box">企業ロゴ</div><div class="box">企業ロゴ</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="c">
+        <h2>結果につながる定量実績</h2>
+        <div class="g g4">
+          <div class="box"><div class="kpi">○○%</div><p>書類通過率</p></div>
+          <div class="box"><div class="kpi">○○%</div><p>面接通過率</p></div>
+          <div class="box"><div class="kpi">○○%</div><p>年収アップ実績</p></div>
+          <div class="box"><div class="kpi">4.9 / 5.0</div><p>Google口コミ（約600件）</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jobs">
+      <div class="c">
+        <h2>ハイクラス求人例（抜粋）</h2>
+        <div class="g g3">
+          <article class="box tier"><h3>大手メーカー / DX推進責任者候補</h3><p>想定年収: 1,000-1,400万円</p><p>全社変革・業務改革・組織横断PM</p></article>
+          <article class="box tier"><h3>グローバルメーカー / 品質保証統括</h3><p>想定年収: 900-1,250万円</p><p>品質戦略策定・海外拠点連携</p></article>
+          <article class="box tier"><h3>成長メーカー / 新規事業技術企画</h3><p>想定年収: 850-1,150万円</p><p>技術戦略・事業開発・アライアンス</p></article>
+        </div>
+        <div style="margin-top:14px"><a class="btn main cv-main" href="#form">非公開ハイクラス求人を相談する</a></div>
+      </div>
+    </section>
+
+    <section id="quality">
+      <div class="c">
+        <h2>支援品質（量より質）</h2>
+        <div class="g g2">
+          <article class="box"><h3>選考突破ノウハウの再現性</h3><p>職種別の評価軸を踏まえた書類・面接対策を実施。</p></article>
+          <article class="box"><h3>意思決定支援</h3><p>条件比較だけでなく、役割期待・中長期キャリアを含めて判断。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="partner">
+      <div class="c">
+        <h2>担当コンサルタント</h2>
+        <div class="g g3">
+          <article class="box"><h3>担当者A</h3><p>出身: メーカー採用支援</p><p>実績: 800-1,300万円帯</p></article>
+          <article class="box"><h3>担当者B</h3><p>出身: 技術職採用支援</p><p>実績: 700-1,100万円帯</p></article>
+          <article class="box"><h3>担当者C</h3><p>出身: 経営人材支援</p><p>実績: 900-1,500万円帯</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="c">
+        <h2>FAQ</h2>
+        <div class="g g2">
+          <article class="box"><h3>転職意思が固まっていなくても相談可能？</h3><p>可能です。現市場での選択肢確認から始められます。</p></article>
+          <article class="box"><h3>情報漏えいは大丈夫？</h3><p>個人情報と応募情報は厳格に管理し、同意なく共有しません。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="c">
+        <div class="band">
+          <h2>ハイクラス転職の勝率を上げるなら、まずは無料相談から。</h2>
+          <p>最短30秒 / 完全無料 / オンライン対応</p>
+          <div class="cta-row">
+            <a class="btn main cv-main" href="#form">無料でハイクラス相談をする</a>
+            <a class="btn sub cv-sub" href="#form">まずは求人情報を受け取る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="c">運営会社情報 / プライバシーポリシー / 個人情報保護方針</div></footer>
+  <div class="mfix">
+    <a class="btn main cv-main" href="#form">無料相談</a>
+    <a class="btn sub cv-sub" href="#form">情報収集</a>
+  </div>
+  <script>
+    (function(){
+      var s=document.getElementById("intentSelect"); if(!s) return;
+      document.querySelectorAll(".cv-main").forEach(function(el){el.addEventListener("click",function(){s.value="転職相談をしたい";});});
+      document.querySelectorAll(".cv-sub").forEach(function(el){el.addEventListener("click",function(){s.value="まずは求人情報を見たい";});});
+      // FUTURE: オウンドメディア公開後は .cv-sub の href を外部URLへ差し替え
+    })();
+  </script>
+</body>
+</html>

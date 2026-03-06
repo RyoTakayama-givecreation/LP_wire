@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ギブクリエーション | メーカー転職LPワイヤー</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --ink: #112138;
+      --sub: #4f647f;
+      --line: #d8e0ea;
+      --brand: #0d5f8c;
+      --brand-2: #0f766e;
+      --cta: #ff6b2c;
+      --cta-ink: #fffaf6;
+      --accent: #ffd166;
+      --max: 1120px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -20%, #d9ecff 0%, transparent 60%),
+        radial-gradient(900px 500px at 90% -15%, #d7f4ed 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .container { width: min(var(--max), 92%); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      background: rgba(245, 247, 250, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .head-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+    }
+    .logo small {
+      display: block;
+      font-weight: 500;
+      color: var(--sub);
+      font-size: 0.78rem;
+    }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+    .btn.main { background: var(--cta); color: var(--cta-ink); }
+    .btn.sub { background: #fff; color: var(--brand); border-color: #b9d6e8; }
+
+    section { padding: 58px 0; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(17, 33, 56, 0.05);
+    }
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .hero {
+      padding: 34px;
+      background:
+        linear-gradient(145deg, #ffffff 0%, #f6fbff 55%, #eef7fb 100%);
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #e4f3ff;
+      color: #0f4f79;
+      border: 1px solid #b9ddf7;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin: 0 0 14px; }
+    h1 { font-size: clamp(1.6rem, 2.8vw, 2.25rem); }
+    h2 { font-size: clamp(1.25rem, 2.1vw, 1.7rem); }
+    p { margin: 0 0 12px; color: #21344f; }
+
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 18px 0 22px;
+    }
+    .badge {
+      background: #fff;
+      border: 1px solid #cde1f0;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #154666;
+    }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .note { font-size: 0.82rem; color: var(--sub); margin-top: 10px; }
+
+    .form-box { padding: 24px; }
+    .form-box h3 { font-size: 1.08rem; }
+    .step {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0c6f5b;
+      background: #dcfbf2;
+      border: 1px solid #9be6cd;
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-bottom: 10px;
+    }
+    .field { margin-bottom: 10px; }
+    .field label {
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+      color: #2c4160;
+      font-weight: 700;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid #c9d7e6;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    .field textarea { min-height: 72px; resize: vertical; }
+    .check {
+      font-size: 0.82rem;
+      color: var(--sub);
+      margin: 8px 0 12px;
+    }
+    .full { width: 100%; text-align: center; }
+
+    .section-title { margin-bottom: 20px; }
+    .logo-grid, .stats, .job-grid, .point-grid, .case-grid, .advisor-grid, .steps, .faq, .measure-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .logo-grid { grid-template-columns: repeat(6, 1fr); }
+    .logo-item {
+      background: #fff;
+      border: 1px dashed #c5d3e3;
+      border-radius: 10px;
+      padding: 18px 8px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #59718f;
+      font-weight: 700;
+    }
+    .stats { grid-template-columns: repeat(5, 1fr); }
+    .stat {
+      background: #fff;
+      border: 1px solid #d6e2ee;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .stat b { display: block; font-size: 1.1rem; color: #0c587f; }
+    .stat span { font-size: 0.82rem; color: #4f647f; }
+
+    .job-grid { grid-template-columns: repeat(3, 1fr); }
+    .job-card, .point, .case, .advisor, .step-card, .faq-item, .measure {
+      background: #fff;
+      border: 1px solid #d9e4ef;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .point-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-grid { grid-template-columns: repeat(3, 1fr); }
+    .advisor-grid { grid-template-columns: repeat(3, 1fr); }
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #9bc8e5, #d6e8f6);
+      margin-bottom: 10px;
+      border: 1px solid #a8c8df;
+    }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .step-card strong { color: #0a6071; }
+    .faq { grid-template-columns: repeat(2, 1fr); }
+    .faq-item h3 { font-size: 0.95rem; margin-bottom: 6px; }
+    .faq-item p { font-size: 0.88rem; margin: 0; }
+
+    .cta-band {
+      background: linear-gradient(120deg, #0d5f8c 0%, #0f766e 100%);
+      color: #f6fcff;
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid #1f5e7a;
+    }
+    .cta-band p { color: #eaf6ff; }
+
+    .measure-grid { grid-template-columns: repeat(5, 1fr); }
+    .measure {
+      background: #f8fbff;
+      border-style: dashed;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #3f5a79;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 90px;
+      color: var(--sub);
+      font-size: 0.82rem;
+    }
+
+    .mobile-fixed {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.96);
+      border-top: 1px solid #d3deea;
+      padding: 8px 10px;
+      display: none;
+      gap: 8px;
+      z-index: 30;
+    }
+    .mobile-fixed .btn { flex: 1; text-align: center; padding: 10px 8px; }
+
+    @media (max-width: 980px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: repeat(3, 1fr); }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .job-grid, .case-grid, .advisor-grid, .steps, .faq, .measure-grid, .point-grid {
+        grid-template-columns: 1fr;
+      }
+      nav { display: none; }
+    }
+    @media (max-width: 760px) {
+      section { padding: 44px 0; }
+      .hero, .form-box { padding: 18px; }
+      .head-row .btn { display: none; }
+      .mobile-fixed { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container head-row">
+      <div class="logo">
+        ギブクリエーション
+        <small>メーカー転職のプロフェッショナル</small>
+      </div>
+      <nav>
+        <a href="#logos">取り扱いメーカー企業</a>
+        <a href="#jobs">非公開求人例</a>
+        <a href="#cases">成功事例</a>
+        <a href="#advisors">コンサルタント紹介</a>
+        <a href="#faq">よくある質問</a>
+      </nav>
+      <a class="btn main" href="#form">無料でキャリア相談する</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container hero-wrap">
+        <article class="card hero">
+          <span class="eyebrow">メーカー転職特化</span>
+          <h1>メーカー転職に特化した支援で、<br>納得できる次のキャリアへ。</h1>
+          <p>非公開求人・内部情報・選考ノウハウをもとに、転職成功だけでなく、その先のキャリアまで伴走します。</p>
+          <div class="badge-row">
+            <span class="badge">Google口コミ 4.9 / 5.0（約600件）</span>
+            <span class="badge">メーカー特化の専門コンサル</span>
+            <span class="badge">非公開求人・独自コネクション多数</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn main cv-main" href="#form">30秒で完了 無料キャリア相談を予約</a>
+            <a class="btn sub cv-sub" href="#form">情報収集から始める</a>
+          </div>
+          <p class="note">※ご相談・ご紹介はすべて無料です。</p>
+        </article>
+
+        <aside id="form" class="card form-box">
+          <span class="step">STEP 1/2</span>
+          <h3>無料キャリア相談フォーム（ワイヤー）</h3>
+          <div class="field">
+            <label>希望内容（必須）</label>
+            <select id="intentSelect">
+              <option>転職相談をしたい</option>
+              <option>まずは求人情報を見たい</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>希望時期（必須）</label>
+            <select>
+              <option>すぐに</option>
+              <option>3か月以内</option>
+              <option>6か月以内</option>
+              <option>未定</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>現職の職種（必須）</label>
+            <input type="text" placeholder="例: 生産技術 / 品質保証 / 設計開発">
+          </div>
+          <div class="field">
+            <label>年収帯（必須）</label>
+            <input type="text" placeholder="例: 650万円">
+          </div>
+          <hr style="border:none;border-top:1px solid #dfe7ef;margin:12px 0;">
+          <span class="step">STEP 2/2</span>
+          <div class="field">
+            <label>氏名（必須）</label>
+            <input type="text" placeholder="山田 太郎">
+          </div>
+          <div class="field">
+            <label>メールアドレス（必須）</label>
+            <input type="email" placeholder="sample@example.com">
+          </div>
+          <div class="field">
+            <label>電話番号（任意）</label>
+            <input type="tel" placeholder="090-xxxx-xxxx">
+          </div>
+          <div class="check">個人情報の取り扱いに同意の上、送信してください。</div>
+          <a class="btn main full" href="#">無料キャリア相談を予約する</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="logos">
+      <div class="container">
+        <div class="section-title">
+          <h2>多くのメーカー転職で選ばれている理由があります</h2>
+          <p>最初の不安を第三者評価と実績で解消する、信頼の導入ゾーンです。</p>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-item">メーカー企業ロゴ</div>
+          <div class="logo-item">メーカー企業ロゴ</div>
+          <div class="logo-item">メーカー企業ロゴ</div>
+          <div class="logo-item">メーカー企業ロゴ</div>
+          <div class="logo-item">受賞バッジ</div>
+          <div class="logo-item">口コミ評価バッジ</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>数字でわかる、ギブクリエーションの転職支援</h2>
+          <p>ここは実数差し替え前提の指標ゾーンです。</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>○○件</b><span>合格・内定実績</span></div>
+          <div class="stat"><b>○○%</b><span>書類通過率</span></div>
+          <div class="stat"><b>○○%</b><span>面接通過率</span></div>
+          <div class="stat"><b>○○%</b><span>年収アップ実績</span></div>
+          <div class="stat"><b>4.9 / 5.0</b><span>Google口コミ（約600件）</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jobs">
+      <div class="container">
+        <div class="section-title">
+          <h2>一般公開されない「本当に良い求人」に出会える</h2>
+          <p>独自ネットワークに基づく非公開求人・内部情報の提示ゾーン。</p>
+        </div>
+        <div class="job-grid">
+          <article class="job-card">
+            <h3>大手メーカー / 生産技術（管理職候補）</h3>
+            <p>想定年収: 800-1,100万円</p>
+            <p>上流工程・組織改善・大型案件推進</p>
+          </article>
+          <article class="job-card">
+            <h3>グローバルメーカー / 品質保証スペシャリスト</h3>
+            <p>想定年収: 700-950万円</p>
+            <p>品質体制再構築・監査対応・海外連携</p>
+          </article>
+          <article class="job-card">
+            <h3>成長メーカー / 技術企画・新規事業開発</h3>
+            <p>想定年収: 750-1,000万円</p>
+            <p>開発戦略・事業企画・部門横断プロジェクト</p>
+          </article>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="btn main cv-main" href="#form">非公開求人を無料で紹介してもらう</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>ギブクリエーションが選ばれる4つの理由</h2>
+        </div>
+        <div class="point-grid">
+          <article class="point">
+            <h3>① メーカー特化による専門性</h3>
+            <p>業界構造・職種特性・採用背景を理解した支援で、技術職・専門職にも対応。</p>
+          </article>
+          <article class="point">
+            <h3>② 独自ネットワークによる情報優位性</h3>
+            <p>非公開求人・内部情報・選考突破ノウハウを提供し、意思決定の精度を高めます。</p>
+          </article>
+          <article class="point">
+            <h3>③ キャリア設計視点のコンサルティング</h3>
+            <p>転職ありきではなく、中長期のキャリア設計から伴走する支援スタンス。</p>
+          </article>
+          <article class="point">
+            <h3>④ 顧客満足度・口コミ評価の高さ</h3>
+            <p>Google口コミ4.9/5.0（約600件）や受賞歴など、第三者評価でも高い信頼。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-title">
+          <h2>メーカー転職の成功事例</h2>
+        </div>
+        <div class="case-grid">
+          <article class="case">
+            <h3>32歳 / 生産技術</h3>
+            <p><strong>620万円 -> 780万円</strong></p>
+            <p>選考企業ごとの対策で面接通過率が向上し、希望に近い環境へ。</p>
+          </article>
+          <article class="case">
+            <h3>38歳 / 品質保証</h3>
+            <p><strong>730万円 -> 920万円</strong></p>
+            <p>5年後を見据えた提案により、納得感の高い意思決定を実現。</p>
+          </article>
+          <article class="case">
+            <h3>29歳 / 技術開発</h3>
+            <p><strong>540万円 -> 690万円</strong></p>
+            <p>在職中でも進めやすい日程調整・連絡代行で負担を最小化。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="advisors">
+      <div class="container">
+        <div class="section-title">
+          <h2>メーカー転職を熟知したコンサルタントが担当</h2>
+        </div>
+        <div class="advisor-grid">
+          <article class="advisor">
+            <div class="avatar"></div>
+            <h3>担当者A</h3>
+            <p>得意領域: 機械・生産技術</p>
+            <p>支援実績: 600-1,000万円帯</p>
+          </article>
+          <article class="advisor">
+            <div class="avatar"></div>
+            <h3>担当者B</h3>
+            <p>得意領域: 電気・制御設計</p>
+            <p>支援実績: 500-900万円帯</p>
+          </article>
+          <article class="advisor">
+            <div class="avatar"></div>
+            <h3>担当者C</h3>
+            <p>得意領域: 品質保証・品質管理</p>
+            <p>支援実績: 550-950万円帯</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>ご相談から内定・入社後まで、完全無料でサポート</h2>
+        </div>
+        <div class="steps">
+          <article class="step-card"><strong>1.</strong> 無料相談予約（30秒）</article>
+          <article class="step-card"><strong>2.</strong> キャリア面談（オンライン可）</article>
+          <article class="step-card"><strong>3.</strong> 求人提案・応募戦略設計</article>
+          <article class="step-card"><strong>4.</strong> 書類添削・面接対策</article>
+          <article class="step-card"><strong>5.</strong> 条件交渉・入社準備</article>
+          <article class="step-card"><strong>6.</strong> 入社後フォロー</article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq">
+          <article class="faq-item">
+            <h3>Q. 本当に無料ですか？</h3>
+            <p>A. 相談、求人紹介、選考対策、条件交渉まで完全無料です。</p>
+          </article>
+          <article class="faq-item">
+            <h3>Q. まだ転職するか未定でも相談できますか？</h3>
+            <p>A. 可能です。情報収集・棚卸し段階でも利用できます。</p>
+          </article>
+          <article class="faq-item">
+            <h3>Q. 在職中で忙しいです。</h3>
+            <p>A. オンライン面談・夜間調整・連絡代行で進められます。</p>
+          </article>
+          <article class="faq-item">
+            <h3>Q. 技術職・専門職にも対応できますか？</h3>
+            <p>A. メーカー特化のため、支援実績が豊富です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-band">
+          <h2>メーカー転職で後悔しないために、まずは無料で相談しませんか？</h2>
+          <p>最短30秒 / 完全無料 / オンライン対応</p>
+          <div class="cta-row">
+            <a class="btn main cv-main" href="#form">無料キャリア相談を予約する</a>
+            <a class="btn sub cv-sub" href="#form">まずは求人情報を受け取る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>計測イベント（ワイヤー用メモ）</h2>
+          <p>実装時は下記イベントを計測してください。</p>
+        </div>
+        <div class="measure-grid">
+          <div class="measure">FV CTAクリック</div>
+          <div class="measure">中間CTAクリック</div>
+          <div class="measure">最終CTAクリック</div>
+          <div class="measure">フォームSTEP1到達</div>
+          <div class="measure">フォーム送信完了</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>運営会社情報 / プライバシーポリシー / 個人情報保護方針</p>
+      <p>Copyright (c) Give Creation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="mobile-fixed">
+    <a class="btn main cv-main" href="#form">無料相談</a>
+    <a class="btn sub cv-sub" href="#form">求人を見る</a>
+  </div>
+
+  <script>
+    (function () {
+      var intentSelect = document.getElementById("intentSelect");
+      if (!intentSelect) return;
+
+      function setIntent(value) {
+        intentSelect.value = value;
+      }
+
+      document.querySelectorAll(".cv-main").forEach(function (el) {
+        el.addEventListener("click", function () {
+          setIntent("転職相談をしたい");
+        });
+      });
+
+      document.querySelectorAll(".cv-sub").forEach(function (el) {
+        el.addEventListener("click", function () {
+          setIntent("まずは求人情報を見たい");
+        });
+      });
+
+      // FUTURE: オウンドメディア公開後は .cv-sub の href を外部URLへ差し替える
+      // 例: https://owned.example.com/?intent=info
+    })();
+  </script>
+</body>
+</html>

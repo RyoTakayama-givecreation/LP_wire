@@ -1,0 +1,4560 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ギブクリエーション | メーカー特化型ハイクラス転職エージェント</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: "#1e3a5f", // ネイビー
+                dark: "#0d1b2a",
+                light: "#1a2744",
+                accent: "#2563eb",
+              },
+              gold: {
+                DEFAULT: "#c5a059", // 落ち着いたゴールド
+                bright: "#f59e0b",
+                dark: "#b8943e",
+              },
+              base: {
+                dark: "#1a1a2e",
+                gray: "#f1f3f7",
+                light: "#f8f9fc", // コンサルトーンのライトグレー
+              },
+              cta: {
+                DEFAULT: "#b8943e", // ゴールド
+                hover: "#c5a059",
+              },
+              text: {
+                primary: "#1a1a24", // ほぼ黒
+                secondary: "#52525b",
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', "sans-serif"],
+              en: ['"Montserrat"', "sans-serif"],
+            },
+            letterSpacing: {
+              widest: ".15em",
+              superwide: ".25em",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --color-brand: #1e3a5f;
+        --color-brand-dark: #0d1b2a;
+        --color-brand-light: #1a2744;
+        --color-gold: #c5a059;
+        --color-gold-bright: #f59e0b;
+        --color-text-primary: #1a1a24;
+        --font-family-salary: "Roboto", "Roboto Mono", sans-serif;
+      }
+
+      body {
+        color: #1a1a24;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-en {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      /* ボタンホバーエフェクト */
+      .btn-highclass {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .btn-highclass::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: all 0.5s ease;
+      }
+      .btn-highclass:hover::before {
+        left: 100%;
+      }
+      .btn-header-cta::before,
+      .btn-header-cta::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /* スクロールバー */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f9fc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1a2744;
+        border-radius: 10px;
+      }
+
+      /* 精密さを表す方眼紙グリッド (紫基調) */
+      .bg-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(30, 58, 95, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(30, 58, 95, 0.06) 1px,
+            transparent 1px
+          );
+        background-size: 32px 32px;
+      }
+
+      /* セクション背景タイポグラフィ */
+      .section-title-bg {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.03;
+        font-size: 5rem;
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        pointer-events: none;
+        color: #1a2744;
+      }
+
+      /* ハイエンド：ゴールドアクセントユーティリティ */
+      .gold-line {
+        background: linear-gradient(90deg, #c5a059, #e8d5a3, #c5a059);
+      }
+      .gold-text {
+        color: #c5a059;
+      }
+      .gold-border {
+        border-color: rgba(197, 160, 89, 0.3);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+      .fade-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* delay ユーティリティ */
+      .delay-100 {
+        transition-delay: 0.1s;
+      }
+      .delay-200 {
+        transition-delay: 0.2s;
+      }
+      .delay-300 {
+        transition-delay: 0.3s;
+      }
+      .delay-400 {
+        transition-delay: 0.4s;
+      }
+      .delay-500 {
+        transition-delay: 0.5s;
+      }
+
+      /* FLOW: ガイドライン位置 */
+      #flow-container > div:first-child {
+        left: 24.5px; /* SP: left-6(24px) + w-px中心(0.5px) */
+      }
+      @media (min-width: 768px) {
+        #flow-container > div:first-child {
+          left: calc(50% + 0.5px); /* PC: 50% + w-px中心(0.5px) */
+        }
+      }
+
+      /* FLOW: 紫ラインが上から伸びる */
+      .flow-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--color-gold);
+        transition: height 2.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .flow-progress.is-visible {
+        height: 100%;
+      }
+
+      /* FLOW: ドット — 線が届いたら出現 */
+      /*
+        ライン: left-6(24px) + w-px(1px) → 中心 = 24.5px (SP)
+                left-1/2     + w-px(1px) → 中心 = 50% + 0.5px (PC)
+        ドット: w-3(12px) → translate(-50%)で左に6px戻す
+        よって left = ライン中心 が正しい起点
+      */
+      .flow-dot {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: absolute;
+        top: 50%;
+        left: 24.5px; /* SP: ライン左端24px + 線幅0.5px */
+      }
+      @media (min-width: 768px) {
+        .flow-dot {
+          left: calc(50% + 0.5px); /* PC: ライン左端50% + 線幅0.5px */
+        }
+      }
+      .flow-dot.is-visible {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      /* アコーディオン (FAQ用) */
+      details > summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* FAQ: JS制御のスムーズ開閉 */
+      .faq-body {
+        overflow: hidden;
+        height: 0;
+        transition: height 0.38s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* ==========================================
+         ロゴスライダー用アニメーション
+         ========================================== */
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes slide-right {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .animate-slide-left {
+        animation: slide-left 80s linear infinite;
+      }
+
+      .animate-slide-right {
+        animation: slide-right 80s linear infinite;
+      }
+
+      /* ==========================================
+         ASSIGN風 ハイエンド求人カルーセル用CSS
+         ========================================== */
+      .he-container {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+      }
+      @media (max-width: 899px) {
+        .he-container {
+          flex-direction: column;
+          gap: 24px;
+        }
+      }
+
+      .he-sidebar {
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        padding: 40px 30px;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
+      @media (min-width: 900px) {
+        .he-sidebar {
+          width: 260px;
+          padding: 60px 0;
+        }
+      }
+      @media (max-width: 899px) {
+        .he-sidebar {
+          padding: 32px 20px;
+        }
+      }
+
+      .he-sidebar__inner {
+        position: sticky;
+        top: 100px;
+        padding-left: 30px;
+      }
+      @media (max-width: 899px) {
+        .he-sidebar__inner {
+          position: static;
+          padding-left: 0;
+          text-align: center;
+        }
+      }
+
+      .he-sidebar__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .he-sidebar__badge-label {
+        color: var(--color-brand);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+      .he-sidebar__badge-num {
+        font-family: "Montserrat", sans-serif;
+        color: var(--color-brand);
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 800;
+      }
+      .he-sidebar__title {
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #1a1a24;
+        margin: 16px 0 0;
+      }
+      .he-sidebar__line {
+        margin-top: 24px;
+        width: 100%;
+        position: relative;
+        height: 1px;
+        background: #e5e7eb;
+      }
+      .he-sidebar__line-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 40%;
+        background: var(--color-gold);
+      }
+
+      .he-main {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .he-tabs {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        margin-bottom: 0;
+      }
+      .he-tabs__btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px 4px 0 0;
+        border: 1px solid #e5e7eb;
+        border-bottom: none;
+        padding: 12px 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .he-tabs__btn.is-active,
+      .he-tabs__btn:hover {
+        background-color: var(--color-brand-dark);
+        color: #fff;
+        border-color: var(--color-brand-dark);
+      }
+
+      .he-carousel {
+        background-color: var(--color-brand-dark);
+        padding: 24px 20px 24px;
+        border-radius: 0 0 4px 4px;
+        position: relative;
+      }
+
+      .he-carousel__track {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        padding-bottom: 8px;
+      }
+      .he-carousel__track.active {
+        cursor: grabbing;
+      }
+      .he-carousel__track::-webkit-scrollbar {
+        display: none;
+      }
+      .he-carousel__track {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .he-card {
+        flex: 0 0 260px;
+        scroll-snap-align: start;
+        background: #ffffff;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .he-card__logo {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      .he-card__logo-text {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #8c94a3;
+        border: 1px solid #4b5563;
+        padding: 2px 8px;
+      }
+
+      .he-card__body {
+        padding: 20px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1;
+      }
+
+      .he-card__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .he-card__position {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a24;
+        line-height: 1.4;
+        min-height: 44px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .he-card__salary-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .he-card__salary-badge {
+        background-color: rgba(197, 160, 89, 0.12);
+        color: var(--color-gold);
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 2px;
+      }
+      .he-card__salary-value {
+        font-family: var(--font-family-salary);
+        font-size: 18px;
+        font-weight: 800;
+        color: #f59e0b;
+      }
+      .he-card__salary-unit {
+        font-size: 12px;
+        color: #6b7280;
+        font-weight: 500;
+      }
+
+      .he-card__desc-box {
+        background-color: #f8f9fc;
+        border-radius: 2px;
+        padding: 12px;
+        flex: 1;
+        border: 1px solid #e5e7eb;
+      }
+      .he-card__text {
+        font-size: 13px;
+        color: #4b5563;
+        line-height: 1.6;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-weight: 500;
+      }
+
+      .he-carousel__nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .he-carousel__dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .he-carousel__dot {
+        width: 24px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.3);
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .he-carousel__dot.is-active {
+        background-color: #ffffff;
+      }
+      .he-carousel__arrows {
+        display: flex;
+        gap: 8px;
+      }
+      .he-carousel__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .he-carousel__arrow:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+      }
+
+      @media (min-width: 1200px) {
+        .he-tabs {
+          gap: 10px;
+        }
+        .he-tabs__btn {
+          width: 240px;
+          flex: none;
+          font-size: 14px;
+          padding: 12px 4px;
+        }
+      }
+
+      /* ==================================================
+         転職決定事例スライダー用CSS
+         ================================================== */
+      .case-studies {
+        padding: 96px 0;
+        width: 100%;
+        background-color: #f8f9fc;
+      }
+      @media (max-width: 599px) {
+        .case-studies {
+          padding: 64px 0;
+        }
+      }
+
+      .case-studies__container {
+        position: relative;
+      }
+
+      .case-studies__inner {
+        max-width: 810px;
+        margin: 0 auto;
+        position: relative;
+        overflow: visible;
+      }
+      @media (min-width: 1401px) {
+        .case-studies__inner {
+          max-width: none;
+          width: 810px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      @media (min-width: 1201px) and (max-width: 1400px) {
+        .case-studies__inner {
+          max-width: none;
+          width: 810px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      @media (max-width: 1200px) {
+        .case-studies__inner {
+          margin: 0 auto;
+          padding: 0 15px;
+        }
+      }
+
+      /* ----- タイトル・説明 ----- */
+      .case-studies__title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        color: var(--color-brand);
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .case-studies__description {
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1.25;
+        color: var(--color-text-primary);
+        text-align: center;
+        margin-bottom: 64px;
+      }
+      @media (max-width: 768px) {
+        .case-studies__description {
+          font-size: 24px;
+        }
+      }
+
+      /* ----- タブ ----- */
+      .case-studies__tabs {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        width: 810px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 2;
+        height: 68px;
+      }
+      @media (max-width: 599px) {
+        .case-studies__tabs {
+          width: 100%;
+        }
+      }
+
+      .case-studies__tab {
+        margin-top: 8px;
+        width: 215px;
+        height: 68px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        background: transparent;
+        z-index: 1;
+        padding: 0;
+        font-family: inherit;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+      }
+      .case-studies__tab:not(:first-child) {
+        margin-left: -55px;
+      }
+      @media (max-width: 599px) {
+        .case-studies__tab:not(:first-child) {
+          margin-left: -35px;
+        }
+      }
+      .case-studies__tab:hover {
+        transform: translateY(-5px);
+      }
+
+      /* -- 20代タブ -- */
+      .case-studies__tab--20s {
+        position: relative;
+        clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+        border-radius: 6px 0 0 0;
+      }
+      @media (max-width: 599px) {
+        .case-studies__tab--20s {
+          width: 40%;
+          clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+        }
+      }
+      .case-studies__tab--20s::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-brand);
+        z-index: -1;
+        transition:
+          filter 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .case-studies__tab--20s:not(.active)::before {
+        filter: brightness(0.7);
+        opacity: 0.8;
+      }
+      .case-studies__tab--20s.active {
+        z-index: 3;
+        opacity: 1;
+      }
+      .case-studies__tab--20s:hover:not(.active)::before {
+        filter: brightness(0.85);
+        opacity: 0.9;
+      }
+
+      /* -- 30代タブ -- */
+      .case-studies__tab--30s {
+        position: relative;
+        clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+      }
+      @media (max-width: 599px) {
+        .case-studies__tab--30s {
+          width: 45%;
+          clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+        }
+      }
+      .case-studies__tab--30s::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-brand-dark);
+        border-radius: inherit;
+        z-index: -1;
+        transition:
+          filter 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .case-studies__tab--30s:not(.active)::before {
+        filter: brightness(0.7);
+        opacity: 0.8;
+      }
+      .case-studies__tab--30s.active {
+        z-index: 3;
+        opacity: 1;
+      }
+      .case-studies__tab--30s:hover:not(.active)::before {
+        filter: brightness(0.85);
+        opacity: 0.9;
+      }
+
+      /* ----- スライダーラッパー ----- */
+      .case-studies__slider-wrapper {
+        background: var(--color-brand);
+        border-radius: 0 20px 20px 20px;
+        padding: 30px 20px 20px;
+        overflow: hidden;
+        position: relative;
+        width: 810px;
+        margin: 0 auto;
+        transition: background-color 0.3s ease;
+        margin-top: -5px;
+        z-index: 2;
+      }
+      @media (max-width: 1200px) {
+        .case-studies__slider-wrapper {
+          width: 100%;
+        }
+      }
+
+      .case-studies__slider-wrapper.bg-20s {
+        background: var(--color-brand);
+      }
+      .case-studies__slider-wrapper.bg-20s::before {
+        background: linear-gradient(
+          to right,
+          var(--color-brand) 0%,
+          rgba(30, 58, 95, 0) 100%
+        );
+      }
+      .case-studies__slider-wrapper.bg-20s::after {
+        background: linear-gradient(
+          to left,
+          var(--color-brand) 0%,
+          rgba(30, 58, 95, 0) 100%
+        );
+      }
+
+      .case-studies__slider-wrapper.bg-30s {
+        background: var(--color-brand-dark);
+      }
+      .case-studies__slider-wrapper.bg-30s::before {
+        background: linear-gradient(
+          to right,
+          var(--color-brand-dark) 0%,
+          rgba(13, 27, 42, 0) 100%
+        );
+      }
+      .case-studies__slider-wrapper.bg-30s::after {
+        background: linear-gradient(
+          to left,
+          var(--color-brand-dark) 0%,
+          rgba(13, 27, 42, 0) 100%
+        );
+      }
+
+      .case-studies__slider-wrapper::before,
+      .case-studies__slider-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 12%;
+        z-index: 10;
+        pointer-events: none;
+        transition: background 0.3s ease;
+      }
+      @media (max-width: 599px) {
+        .case-studies__slider-wrapper::before,
+        .case-studies__slider-wrapper::after {
+          width: 8%;
+        }
+      }
+      .case-studies__slider-wrapper::before {
+        left: 0;
+      }
+      .case-studies__slider-wrapper::after {
+        right: 0;
+      }
+
+      /* ----- スライダー ----- */
+      .case-studies__slider {
+        overflow: visible;
+      }
+      .case-studies__slider .swiper-wrapper {
+        align-items: stretch;
+        padding: 10px 0;
+      }
+      .case-studies__slider .swiper-slide {
+        width: auto;
+        height: auto;
+      }
+
+      /* ----- カード ----- */
+      .case-study {
+        background: #ffffff;
+        padding: 0 25px 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      @media (max-width: 599px) {
+        .case-study {
+          height: 480px;
+        }
+      }
+
+      .case-study__profile {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin: 10px 0;
+        position: relative;
+      }
+      .case-study__profile img {
+        width: 123px;
+        height: 123px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+
+        top: -15px;
+        z-index: 2;
+        background: #1e2a3a;
+      }
+      @media (max-width: 599px) {
+        .case-study__profile img {
+          height: auto;
+        }
+      }
+
+      .case-study__tags {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .case-study__tags-row {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .case-study__tag {
+        padding: 4px 10px;
+        background: transparent;
+        border: 1px solid #949494;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #949494;
+        white-space: nowrap;
+      }
+
+      .case-study__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      @media (max-width: 599px) {
+        .case-study__content {
+          font-size: 14px;
+        }
+      }
+
+      .case-study__transition {
+        display: flex;
+        align-items: flex-start;
+        gap: 45px;
+        padding: 20px 0;
+        border-bottom: 2px dotted #999;
+        border-top: 2px dotted #999;
+        position: relative;
+      }
+      .case-study__transition::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        bottom: 20px;
+        width: 2px;
+        background: repeating-linear-gradient(
+          to bottom,
+          #999 0px,
+          #999 2px,
+          transparent 2px,
+          transparent 4px
+        );
+        transform: translateX(-50%);
+      }
+
+      .case-study__before,
+      .case-study__after {
+        flex: 1;
+      }
+      .case-study__before p,
+      .case-study__after p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #1a1a24;
+      }
+      @media (max-width: 599px) {
+        .case-study__before p,
+        .case-study__after p {
+          font-size: 12px;
+          line-height: 1.5;
+        }
+      }
+      .case-study__label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-brand);
+        margin-bottom: 6px;
+      }
+      .case-study__arrow {
+        color: var(--color-brand);
+        font-weight: 700;
+      }
+      .case-study__salary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      @media (max-width: 599px) {
+        .case-study__salary {
+          gap: 8px;
+        }
+      }
+      .case-study__arrow-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+      }
+      .case-study__comment p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #333;
+        margin: 0;
+      }
+      @media (max-width: 599px) {
+        .case-study__comment p {
+          font-size: 13px;
+          line-height: 1.7;
+        }
+      }
+      .case-study__comment p span.highlight-text {
+        display: inline;
+        position: relative;
+      }
+      .case-study__comment p span.highlight-text .highlight-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(197, 160, 89, 0.3);
+        z-index: -1;
+        transition: width 1s ease;
+      }
+
+      .case-studies__slide.center-active
+        .case-study__comment
+        p
+        span.highlight-text
+        .highlight-bg {
+        width: 100%;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 54px !important;
+        height: 54px !important;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border: 1px solid #ddd;
+        transition: all 0.3s ease;
+      }
+      .swiper-button-prev:hover,
+      .swiper-button-next:hover {
+        transform: translateY(-50%) scale(1.08);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      .swiper-button-prev:after,
+      .swiper-button-next:after {
+        font-size: 20px !important;
+        color: #1a2744;
+        font-weight: 700;
+      }
+
+      .swiper-button-prev {
+        left: 20px !important;
+      }
+      .swiper-button-prev:after {
+        content: "‹" !important;
+        margin-left: -2px;
+      }
+
+      .swiper-button-next {
+        right: 20px !important;
+      }
+      .swiper-button-next:after {
+        content: "›" !important;
+        margin-right: -2px;
+      }
+
+      .case-studies__slider-wrapper .swiper-pagination {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .case-studies__slider-wrapper
+        .swiper-pagination
+        .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+        margin: 0 6px;
+        background: #fff;
+        border: 2px solid #1a2744;
+        opacity: 1;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+      .case-studies__slider-wrapper
+        .swiper-pagination
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: #1a2744;
+        transform: scale(1.15);
+      }
+
+      /* ==================================================
+         転職決定事例スライダー用CSS (精密コンサルトーン)
+         ================================================== */
+      /* タブ（ソリッド・ミニマル） */
+      .cs-tab {
+        background: transparent;
+        border: none;
+        padding: 0 0 12px 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #8c94a3;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .cs-tab::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--color-gold);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: left;
+      }
+      .cs-tab.active {
+        color: var(--color-brand);
+      }
+      .cs-tab.active::after {
+        transform: scaleX(1);
+      }
+
+      /* スライダーラッパーのフェード（白背景に馴染ませる） */
+      #cases-slider-wrapper::before,
+      #cases-slider-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 15%;
+        z-index: 10;
+        pointer-events: none;
+      }
+      #cases-slider-wrapper::before {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          #ffffff 10%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+      #cases-slider-wrapper::after {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          #ffffff 10%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      .case-studies__slider .swiper-wrapper {
+        padding: 4px 0; /* 枠線が切れないように */
+      }
+
+      /* カード本体（飛び出しを無くし、四角くシャープに） */
+      .case-study {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        padding: 32px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .case-studies__slide.center-active .case-study {
+        border-color: var(--color-gold);
+        box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
+      }
+
+      /* ==================================================
+         変更：プロフィール部分（中央寄せを追加）
+         ================================================== */
+      .case-study__profile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* 塊全体を中央に寄せる */
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .case-study__profile img {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #f8f9fc;
+        border: 1px solid #e5e7eb;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+
+      .case-study__tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+
+      .case-study__tag {
+        padding: 4px 12px;
+        background: #f8f9fc;
+        border: 1px solid #e5e7eb;
+        font-size: 11px;
+        font-weight: 700;
+        color: #52525b;
+        letter-spacing: 0.05em;
+        border-radius: 20px;
+      }
+
+      /* Before / After エリア（点線を実線に） */
+      .case-study__transition {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 24px;
+        position: relative;
+      }
+      .case-study__transition::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #e5e7eb; /* 実線 */
+        transform: translateX(-50%);
+      }
+      .case-study__before,
+      .case-study__after {
+        flex: 1;
+      }
+      .case-study__label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        color: #8c94a3;
+        margin-bottom: 4px;
+      }
+      .case-study__company {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a1a24;
+        line-height: 1.4;
+      }
+
+      /* 年収エリア */
+      .case-study__salary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: #f8f9fc;
+        border: 1px solid #e5e7eb;
+        padding: 12px 16px;
+        margin-bottom: 24px;
+      }
+      .case-study__salary-val {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #52525b;
+      }
+      .case-study__salary-val.after {
+        color: var(--color-gold);
+        font-size: 20px;
+      }
+      .case-study__arrow-icon {
+        color: #a1a1aa;
+      }
+
+      /* コメント（ハイライト修正） */
+      .case-study__comment p {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.7;
+        color: #52525b;
+        margin: 0;
+      }
+      .case-study__comment p span.highlight-text {
+        display: inline-block;
+        position: relative;
+        font-weight: 700;
+        color: #1a1a24;
+        z-index: 1;
+      }
+      .case-study__comment p span.highlight-text .highlight-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgba(197, 160, 89, 0.25);
+        z-index: -1;
+        transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      /* 変更：CSSの詳細度を上げて確実に上書きさせる */
+      .case-studies__slide.center-active
+        .case-study__comment
+        p
+        span.highlight-text
+        .highlight-bg {
+        width: 100% !important;
+        height: 100%;
+      }
+
+      /* 矢印ボタン（ソリッドな四角形） */
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 48px !important;
+        height: 48px !important;
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        z-index: 20 !important;
+      }
+      .swiper-button-prev:hover,
+      .swiper-button-next:hover {
+        border-color: var(--color-brand) !important;
+        color: var(--color-brand);
+      }
+      .swiper-button-prev {
+        left: 16px !important;
+      }
+      .swiper-button-next {
+        right: 16px !important;
+      }
+
+      /* 矢印アイコン描画 */
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+      }
+      .swiper-button-prev::after {
+        transform: rotate(-135deg);
+        margin-left: 4px;
+      }
+      .swiper-button-next::after {
+        transform: rotate(45deg);
+        margin-right: 4px;
+      }
+      /* casesの矢印は1種類だけ表示（重複防止） */
+      #cases .swiper-button-prev::after,
+      #cases .swiper-button-next::after {
+        content: "" !important;
+        font-size: 0 !important;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+      }
+      #cases .swiper-button-prev::after {
+        transform: rotate(-135deg);
+        margin-left: 4px;
+      }
+      #cases .swiper-button-next::after {
+        transform: rotate(45deg);
+        margin-right: 4px;
+      }
+
+      /* ==================================================
+         ページネーション
+         ================================================== */
+      #cases-pagination {
+        position: static !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+      }
+      .swiper-pagination-bullet {
+        width: 24px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #c0bcd6;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--color-gold);
+      }
+
+      /* 左右のクリッカブルエリア */
+      .slider-nav-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 15;
+        cursor: pointer;
+      }
+      .slider-nav-area--left {
+        left: 0;
+      }
+      .slider-nav-area--right {
+        right: 0;
+      }
+      /* ==================================================
+         コンサルタント横スクロール用CSS
+         ================================================== */
+      .consultant-carousel {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 24px;
+        -webkit-overflow-scrolling: touch;
+        /* スクロールバー非表示 */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        cursor: grab;
+      }
+      .consultant-carousel:active {
+        cursor: grabbing;
+      }
+      .consultant-carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* ==================================================
+         最適化フォーム用CSS (精密コンサルトーン)
+         ================================================== */
+      .form-input {
+        width: 100%;
+        background-color: #f8f9fc;
+        border: 1px solid #e5e7eb;
+        padding: 16px;
+        font-size: 14px;
+        color: #1a1a24;
+        transition: all 0.2s ease;
+        outline: none;
+      }
+      .form-input:focus {
+        background-color: #ffffff;
+        border-color: var(--color-brand);
+        /* フォーカス時に下線が太く光るハイエンドな意匠 */
+        box-shadow: inset 0 -2px 0 0 var(--color-brand);
+      }
+      .form-input::placeholder {
+        color: #a1a1aa;
+      }
+      .form-label {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: #1a1a24;
+        margin-bottom: 8px;
+        letter-spacing: 0.05em;
+      }
+      /* 洗練されたバッジデザイン */
+      .req-badge {
+        background: rgba(197, 160, 89, 0.08);
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        color: #c5a059;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 6px;
+        margin-left: 8px;
+        letter-spacing: 0.1em;
+      }
+      .opt-badge {
+        background: #f1f3f7;
+        border: 1px solid #e5e7eb;
+        color: #8c94a3;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 6px;
+        margin-left: 8px;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-sans">
+    <!-- ヘッダー -->
+    <!-- 修正後のヘッダー -->
+    <header
+      class="absolute lg:fixed top-0 w-full z-50 bg-[#0d1b2a]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300"
+      style="border-bottom: 1px solid rgba(197, 160, 89, 0.15)"
+      id="header"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <!-- 中身はそのまま -->
+        <div class="flex items-center gap-3">
+          <img
+            src="./logo/logo.png"
+            alt="GIVE CREATION ロゴ"
+            class="h-5 w-auto object-contain"
+          />
+        </div>
+        <nav
+          class="hidden lg:flex gap-8 items-center text-xs font-bold tracking-widest text-white/60 font-en"
+        >
+          <a href="#features" class="hover:text-white transition">REASON</a>
+          <a href="#jobs" class="hover:text-white transition">JOBS</a>
+          <a href="#cases" class="hover:text-white transition">CASES</a>
+          <a href="#consultant" class="hover:text-white transition"
+            >CONSULTANT</a
+          >
+        </nav>
+        <div class="hidden md:block">
+          <a
+            href="#form"
+            class="bg-cta hover:bg-cta-hover text-white px-6 py-2.5 rounded text-xs font-bold tracking-wider transition btn-highclass btn-header-cta shadow-sm shadow-cta/20"
+          >
+            無料で市場価値を診断する
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- FV (チャコール×ネイビー、ダークトーン) -->
+      <section
+        class="relative pt-24 pb-12 lg:pt-32 lg:pb-12 overflow-hidden"
+        style="
+          background: linear-gradient(
+            135deg,
+            #0d1b2a 0%,
+            #1a1a2e 60%,
+            #1e3a5f 100%
+          );
+        "
+      >
+        <div class="absolute inset-0 bg-grid z-0 opacity-10"></div>
+        <!-- ゴールドのアクセントライン -->
+        <div
+          class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-40 z-20"
+        ></div>
+
+        <div
+          class="max-w-[1200px] mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <div class="space-y-6 lg:pt-0">
+            <h1
+              class="text-white text-4xl sm:text-5xl lg:text-[3.5rem] font-black leading-[1.2] tracking-tight"
+            >
+              メーカー転職で、<br />
+              年収1,000万円を<br />
+              <span style="color: #c5a059">狙うなら。</span>
+            </h1>
+
+            <!-- 誰向けかの明記 -->
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span
+                class="border border-gold/40 bg-white/10 px-3 py-1.5 rounded text-xs font-bold tracking-widest"
+                style="color: #c5a059"
+                >年収1,000万以上の非公開求人多数</span
+              >
+              <span
+                class="border border-white/20 bg-white/10 text-white/80 px-3 py-1.5 rounded text-xs font-bold tracking-widest"
+                >生産技術 / 品質保証 / 開発</span
+              >
+            </div>
+
+            <div
+              class="inline-flex items-center gap-4 bg-white/10 backdrop-blur rounded px-4 py-3 border border-white/20"
+            >
+              <i data-lucide="award" class="w-8 h-8 text-gold"></i>
+              <div>
+                <div
+                  class="text-xs text-gold font-bold tracking-widest font-en"
+                >
+                  HIGH CLASS SUPPORT
+                </div>
+                <div class="text-sm font-black text-white mt-0.5">
+                  メーカー転職 合格内定率
+                  <span class="text-gold text-lg">No.1</span>
+                </div>
+                <div class="text-[10px] text-white/50 mt-0.5">
+                  ※2023年度 当社独自のアンケート及び支援実績データに基づく
+                </div>
+              </div>
+            </div>
+
+            <p
+              class="text-white/70 text-sm sm:text-base leading-relaxed max-w-lg font-medium tracking-wide border-l-4 border-gold pl-4"
+            >
+              メーカー特化だから見えてくる、本当の市場価値。<br />
+              「なんとなく悩んでいる」から始まる、ロジカルなキャリア設計。
+            </p>
+
+            <!-- 信頼数字 -->
+            <div class="flex gap-6 pt-2">
+              <div class="text-center">
+                <div class="text-2xl font-black text-gold">82%</div>
+                <div class="text-xs text-white/50 mt-0.5">書類通過率</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-black text-gold">+120万</div>
+                <div class="text-xs text-white/50 mt-0.5">平均年収UP</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-black text-gold">4.9</div>
+                <div class="text-xs text-white/50 mt-0.5">Google口コミ</div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <a
+                href="#form"
+                onclick="setIntent('転職相談をしたい')"
+                class="bg-cta hover:bg-cta-hover text-white text-center py-4 px-8 rounded text-sm font-bold tracking-wider transition btn-highclass w-full sm:w-auto flex items-center justify-center gap-2 shadow-lg shadow-cta/30"
+              >
+                無料で市場価値を診断する
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#form"
+                onclick="setIntent('まずは求人情報を見たい')"
+                class="bg-white/10 border border-white/30 text-white hover:bg-white/20 text-center py-4 px-8 rounded text-sm font-bold tracking-wider transition w-full sm:w-auto flex items-center justify-center gap-2"
+              >
+                まずは求人情報を見る
+              </a>
+            </div>
+          </div>
+
+          <!-- FV 右側インフォグラフィック (白ベース・精密トーン) -->
+          <div class="relative hidden lg:block h-[500px]">
+            <div
+              class="absolute inset-0 bg-white border border-gray-200 shadow-2xl p-8 flex flex-col justify-between z-20 rounded-sm"
+              style="border-top: 2px solid #c5a059"
+            >
+              <div
+                class="flex items-center justify-between border-b border-gray-100 pb-4 mb-6"
+              >
+                <div
+                  class="font-en text-xs tracking-widest text-brand font-bold"
+                >
+                  SALARY EVALUATION DATA
+                </div>
+                <div class="flex gap-1">
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                  <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
+                </div>
+              </div>
+
+              <div class="space-y-8 flex-1 flex flex-col justify-center">
+                <!-- Before -->
+                <div class="relative">
+                  <div
+                    class="flex justify-between text-xs font-bold text-gray-500 mb-2"
+                  >
+                    <span>生産技術 / 35歳</span>
+                    <span class="font-en">650万円</span>
+                  </div>
+                  <div
+                    class="w-full bg-base-light h-8 border border-gray-200 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 left-0 h-full bg-gray-300 w-[60%]"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- 矢印 -->
+                <div class="flex justify-center text-brand">
+                  <i data-lucide="arrow-down" class="w-6 h-6"></i>
+                </div>
+
+                <!-- After -->
+                <div class="relative">
+                  <div
+                    class="flex justify-between text-xs font-bold text-brand mb-2"
+                  >
+                    <span>大手グローバルメーカー</span>
+                    <span class="font-en text-lg">920万円</span>
+                  </div>
+                  <div
+                    class="w-full bg-base-light h-8 border border-gray-200 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 left-0 h-full bg-brand w-[85%] relative"
+                    >
+                      <!-- ストライプアニメーション用 -->
+                      <div
+                        class="absolute inset-0 opacity-20"
+                        style="
+                          background-image: repeating-linear-gradient(
+                            45deg,
+                            transparent,
+                            transparent 10px,
+                            #fff 10px,
+                            #fff 20px
+                          );
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 text-[10px] text-gray-400 text-right">
+                ※支援実績データに基づく一例
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- 追加: 社会的証明 (無限ロゴスライダー) -->
+      <!-- ================================================== -->
+      <section
+        class="py-4 bg-white overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)] relative z-20"
+      >
+        <p
+          class="text-center text-xs font-bold tracking-widest text-brand mb-3 font-en"
+        >
+          トヨタ系・電機メーカーなど大手メーカーとの取引実績
+        </p>
+        <!-- Row 1 -->
+        <div class="relative overflow-hidden mb-4 md:mb-6">
+          <div class="flex animate-slide-left w-max" id="logo-slider-row1">
+            <!-- JSで動的に挿入されます -->
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="relative overflow-hidden">
+          <div class="flex animate-slide-right w-max" id="logo-slider-row2">
+            <!-- JSで動的に挿入されます -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 再現性の数値 -->
+      <!-- FACTS & DATA: ロジカル・モダン・ブラッシュアップ版 -->
+      <section class="py-24 bg-white relative overflow-hidden">
+        <!-- 背景装飾：精密さを演出するグリッドとグラデーション -->
+        <div class="absolute inset-0 bg-grid opacity-40"></div>
+        <div
+          class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+        ></div>
+
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+          <!-- セクションタイトル -->
+          <div class="mb-16">
+            <div class="flex items-center gap-4 mb-2">
+              <span class="w-12 h-[2px] bg-gold"></span>
+              <h2
+                class="font-en text-sm font-extrabold tracking-superwide text-brand uppercase"
+              >
+                Facts & Data
+              </h2>
+            </div>
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+            >
+              <h3
+                class="text-3xl md:text-4xl font-black text-brand leading-tight tracking-tighter"
+              >
+                数値が証明する、<br class="md:hidden" />確かな「決定力」。
+              </h3>
+              <p
+                class="text-text-secondary text-sm md:text-right max-w-md leading-relaxed"
+              >
+                メーカー技術職に特化し、一人の候補者に深く向き合う。その「濃さ」が、業界標準を大きく上回る高水準な実績を生み出しています。
+              </p>
+            </div>
+          </div>
+
+          <!-- データグリッド -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- 1. 書類通過率 (円形インジケーター) -->
+            <div
+              class="bg-white border border-gray-100 p-8 shadow-sm flex flex-col md:flex-row items-center gap-8 group hover:shadow-md transition-shadow"
+            >
+              <div class="relative w-32 h-32 flex-shrink-0">
+                <!-- SVG Progress Circle -->
+                <svg class="w-full h-full transform -rotate-90">
+                  <circle
+                    cx="64"
+                    cy="64"
+                    r="60"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    fill="transparent"
+                    class="text-gray-100"
+                  ></circle>
+                  <circle
+                    cx="64"
+                    cy="64"
+                    r="60"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    fill="transparent"
+                    stroke-dasharray="377"
+                    stroke-dashoffset="68"
+                    class="text-brand transition-all duration-1000 ease-out"
+                  ></circle>
+                </svg>
+                <div
+                  class="absolute inset-0 flex flex-col items-center justify-center"
+                >
+                  <span class="font-en text-3xl font-black text-brand"
+                    >82<small class="text-sm">%</small></span
+                  >
+                </div>
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <h4 class="text-brand font-bold text-lg mb-1">書類通過率</h4>
+                <p class="text-text-secondary text-xs mb-4">
+                  精緻なマッチングにより、無駄な選考を排除。
+                </p>
+                <!-- 比較バー -->
+                <div class="space-y-2 text-[10px] font-bold">
+                  <div class="flex justify-between items-center text-brand">
+                    <span>GIVE CREATION</span>
+                    <span class="font-en">82%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden"
+                  >
+                    <div class="bg-brand h-full w-[82%]"></div>
+                  </div>
+                  <div class="flex justify-between items-center text-gray-400">
+                    <span>業界平均</span>
+                    <span class="font-en">36%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden"
+                  >
+                    <div class="bg-gray-300 h-full w-[36%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 平均年収UP (垂直比較) -->
+            <div
+              class="bg-brand p-8 shadow-xl flex flex-col justify-between relative overflow-hidden group"
+            >
+              <div class="absolute right-[10px] top-[-20px] opacity-10">
+                <i data-lucide="trending-up" class="w-40 h-40 text-white"></i>
+              </div>
+              <div>
+                <h4
+                  class="text-white/70 font-bold text-xs tracking-widest mb-1 uppercase"
+                >
+                  Salary Increase
+                </h4>
+                <h5 class="text-white text-xl font-bold mb-6">
+                  決定時 平均年収UP額
+                </h5>
+                <div class="flex items-end gap-3 mb-6">
+                  <span
+                    class="font-en text-6xl font-black text-gold leading-none"
+                    >+120</span
+                  >
+                  <span class="text-gold font-bold mb-1">万円</span>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="border-l-2 border-white/20 pl-4">
+                  <div class="text-white/50 text-[10px] font-bold mb-1">
+                    大手総合エージェント
+                  </div>
+                  <div class="text-white font-en text-lg">
+                    約30<span class="text-xs ml-1">万円</span>
+                  </div>
+                </div>
+                <div class="border-l-2 border-gold pl-4">
+                  <div class="text-gold/80 text-[10px] font-bold mb-1">
+                    GIVE CREATION
+                  </div>
+                  <div class="text-white font-en text-lg">
+                    120<span class="text-xs ml-1">万円</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. 口コミ (スターレーティング) -->
+            <div
+              class="bg-base-light border border-gray-100 p-8 flex flex-col justify-center text-center"
+            >
+              <h4
+                class="text-brand font-bold text-sm mb-4 tracking-widest uppercase"
+              >
+                Market Trust
+              </h4>
+              <div
+                class="flex items-center justify-center gap-1 text-gold mb-2"
+              >
+                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+              </div>
+              <div class="flex items-center justify-center gap-2 mb-2">
+                <span class="font-en text-5xl font-black text-brand">4.9</span>
+                <span class="text-gray-400 font-en text-xl">/ 5.0</span>
+              </div>
+              <p class="text-text-secondary text-xs font-bold">
+                Google口コミ評価：約600件のフィードバック
+              </p>
+              <div class="mt-4 flex justify-center">
+                <span
+                  class="text-[10px] bg-white border border-gray-200 px-3 py-1 rounded-full text-gray-500"
+                >
+                  「コンサルタントの専門性が高い」との声が最多
+                </span>
+              </div>
+            </div>
+
+            <!-- 4. 実績数 (インパクトナンバー) -->
+            <div
+              class="bg-white border-l-4 border-l-gold p-8 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="mb-4">
+                <h4
+                  class="text-brand font-bold text-sm tracking-widest uppercase mb-1"
+                >
+                  Achievement
+                </h4>
+                <h5 class="text-text-primary text-xl font-black">
+                  メーカー技術職に特化した支援実績
+                </h5>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span
+                  class="font-en text-6xl font-black text-brand tracking-tighter"
+                  >1,200</span
+                >
+                <span class="text-brand font-bold text-xl">名以上</span>
+              </div>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span
+                  class="text-[10px] font-bold text-brand/60 px-2 py-1 bg-brand/5 rounded"
+                  >機械設計</span
+                >
+                <span
+                  class="text-[10px] font-bold text-brand/60 px-2 py-1 bg-brand/5 rounded"
+                  >電気・電子</span
+                >
+                <span
+                  class="text-[10px] font-bold text-brand/60 px-2 py-1 bg-brand/5 rounded"
+                  >組み込みソフト</span
+                >
+                <span
+                  class="text-[10px] font-bold text-brand/60 px-2 py-1 bg-brand/5 rounded"
+                  >生産技術</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 注釈 -->
+          <div class="mt-10 text-right">
+            <p class="text-[10px] text-gray-400">
+              ※各データは2023年度実績、および自社アンケート調査に基づく。業界平均は公開されている転職市場データより算出。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 特徴セクション -->
+      <section
+        id="features"
+        class="py-16 bg-white relative overflow-hidden border-b border-gray-200"
+      >
+        <div
+          class="section-title-bg text-brand top-10 right-4 lg:right-10 text-right"
+        >
+          WHY CHOOSE US
+        </div>
+
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+          <div
+            class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-8"
+          >
+            <div>
+              <h2
+                class="font-en text-sm font-bold tracking-superwide text-brand mb-4 flex items-center gap-3"
+              >
+                <span class="w-8 h-px bg-gold"></span> WHY CHOOSE US
+              </h2>
+              <h3
+                class="text-3xl md:text-5xl font-black text-text-primary leading-tight"
+              >
+                ギブクリエーションが<br />選ばれる4つの理由
+              </h3>
+            </div>
+            <p
+              class="text-text-secondary text-sm font-medium max-w-sm leading-relaxed"
+            >
+              業界に精通したコンサルタントと独自の強固なネットワークが、ハイクラス層の理想のキャリア実現を約束します。
+            </p>
+          </div>
+
+          <div class="space-y-16">
+            <!-- REASON 01 -->
+            <div
+              class="flex flex-col md:flex-row items-center gap-12 group fade-up"
+            >
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+                  alt="メーカー特化"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 left-0 bg-white border-b border-r border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  01<span class="text-gold">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  SPECIALTY
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  メーカー特化による<br />圧倒的な専門性
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >メーカー転職に完全特化した支援体制</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >業界／職種理解が深く、技術職・専門職にも対応可能</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >RPOなど採用コンサルティング支援多数</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- REASON 02 -->
+            <div
+              class="flex flex-col md:flex-row-reverse items-center gap-12 group fade-up delay-100"
+            >
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1560520653-9e0e4cb4ebdf?q=80&w=800&auto=format&fit=crop"
+                  alt="独自ネットワーク"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-white border-b border-l border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  02<span class="text-gold">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pr-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  NETWORK
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  独自ネットワークによる<br />情報優位性
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >メーカー企業との独自コネクションを保有</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >非公開求人／内部情報の提供が可能</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >選考突破のための“再現性あるノウハウ”を蓄積</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- REASON 03 -->
+            <div
+              class="flex flex-col md:flex-row items-center gap-12 group fade-up delay-200"
+            >
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                  alt="キャリア設計"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 left-0 bg-white border-b border-r border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  03<span class="text-gold">.</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 md:pl-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  CONSULTING
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  キャリア設計視点の<br />コンサルティング
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >転職ありきではなく中長期のキャリアを設計</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >内定獲得とその先まで見据えた転職支援</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="check"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary"
+                      >単なる求人紹介ではなく“コンサルタント”として伴走</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- REASON 4（画像 → 文字） -->
+            <div
+              class="flex flex-col md:flex-row-reverse items-center gap-12 group fade-up delay-300"
+            >
+              <!-- image -->
+              <div
+                class="md:w-1/2 relative w-full aspect-[4/3] overflow-hidden border border-gray-200 bg-base-light"
+              >
+                <div
+                  class="absolute inset-0 bg-brand/10 z-10 transition-colors duration-700 group-hover:bg-transparent"
+                ></div>
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop"
+                  alt="顧客満足度・口コミ評価の高さ"
+                  class="w-full h-full object-cover filter grayscale group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+                />
+                <div
+                  class="absolute top-0 left-0 bg-white border-b border-r border-gray-200 text-brand font-en font-black text-4xl lg:text-5xl p-5 lg:p-6 z-20"
+                >
+                  04<span class="text-gold">.</span>
+                </div>
+              </div>
+
+              <!-- text -->
+              <div class="md:w-1/2 md:pl-6">
+                <div
+                  class="font-en text-gray-400 text-xs font-bold tracking-widest mb-4"
+                >
+                  TRUST
+                </div>
+                <h4
+                  class="text-3xl font-black text-text-primary mb-8 leading-tight"
+                >
+                  顧客満足度・<br />口コミ評価の高さ
+                </h4>
+                <ul class="space-y-5 text-sm text-text-secondary">
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="award"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary">
+                      合格内定率NO.1企業多数
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary">
+                      Google口コミ4.9／5.0（約600件）
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <i
+                      data-lucide="trophy"
+                      class="w-5 h-5 text-brand flex-shrink-0"
+                    ></i>
+                    <span class="font-bold text-text-primary">
+                      大手企業からの受賞歴多数
+                    </span>
+                  </li>
+                </ul>
+                <div class="mt-6 grid grid-cols-4 gap-3">
+                  <div class="flex flex-col items-center gap-1.5">
+                    <img
+                      src="./logo/award01.svg"
+                      alt="受賞ロゴ1"
+                      class="h-16 w-full object-contain bg-white"
+                    />
+                    <p
+                      class="text-[10px] text-center text-gray-500 leading-tight font-medium"
+                    >
+                      最優秀<br />エージェント賞<br />2023
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-center gap-1.5">
+                    <img
+                      src="./logo/award02.svg"
+                      alt="受賞ロゴ2"
+                      class="h-16 w-full object-contain bg-white"
+                    />
+                    <p
+                      class="text-[10px] text-center text-gray-500 leading-tight font-medium"
+                    >
+                      採用貢献<br />パートナー賞<br />2023
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-center gap-1.5">
+                    <img
+                      src="./logo/award03.svg"
+                      alt="受賞ロゴ3"
+                      class="h-16 w-full object-contain bg-white"
+                    />
+                    <p
+                      class="text-[10px] text-center text-gray-500 leading-tight font-medium"
+                    >
+                      ハイクラス<br />転職支援賞<br />2022
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-center gap-1.5">
+                    <img
+                      src="./logo/award04.svg"
+                      alt="受賞ロゴ4"
+                      class="h-16 w-full object-contain bg-white"
+                    />
+                    <p
+                      class="text-[10px] text-center text-gray-500 leading-tight font-medium"
+                    >
+                      優秀人材<br />紹介企業賞<br />2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- ASSIGN風 非公開求人カルーセルセクション -->
+      <!-- ================================================== -->
+      <section
+        id="jobs"
+        class="py-24 bg-base-light relative overflow-hidden border-b border-gray-200"
+      >
+        <div class="absolute inset-0 bg-grid opacity-50 z-0"></div>
+        <div class="max-w-[1000px] mx-auto px-6 relative z-10">
+          <div class="flex flex-col justify-between items-start mb-12">
+            <h2
+              class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+            >
+              EXCLUSIVE JOBS
+            </h2>
+            <h3 class="text-3xl font-black text-text-primary leading-tight">
+              一般公開されない<br />「本当に良い求人」に出会える
+            </h3>
+          </div>
+
+          <div class="he-container">
+            <!-- メインコンテンツ -->
+            <div class="he-main">
+              <div class="he-tabs" role="tablist">
+                <button class="he-tabs__btn is-active" data-tab="production">
+                  生産技術
+                </button>
+                <button class="he-tabs__btn" data-tab="quality">
+                  品質保証
+                </button>
+                <button class="he-tabs__btn" data-tab="bizdev">
+                  新規事業開発
+                </button>
+              </div>
+              <div class="he-carousel shadow-xl">
+                <div class="he-carousel__track" id="he-track">
+                  <!-- JSで動的にカードを描画します -->
+                </div>
+
+                <div class="he-carousel__nav">
+                  <div class="he-carousel__dots" id="he-dots"></div>
+                  <div class="he-carousel__arrows">
+                    <button
+                      class="he-carousel__arrow"
+                      id="he-prev"
+                      aria-label="前へ"
+                    >
+                      <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path
+                          d="M6 1L1 6L6 11"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="he-carousel__arrow"
+                      id="he-next"
+                      aria-label="次へ"
+                    >
+                      <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path
+                          d="M1 1L6 6L1 11"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a
+              href="#form"
+              class="bg-white border border-brand text-brand hover:bg-brand hover:text-white text-center py-4 px-10 rounded text-sm font-bold tracking-wider transition inline-flex items-center justify-center gap-2 shadow-sm"
+            >
+              非公開求人を無料で紹介してもらう
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- 転職決定事例セクション (精密コンサルトーン) -->
+      <!-- ================================================== -->
+      <section
+        id="cases"
+        class="py-24 bg-white relative overflow-hidden border-b border-gray-200"
+      >
+        <!-- 背景グリッド -->
+        <div
+          class="absolute inset-0 bg-grid opacity-50 z-0 pointer-events-none"
+        ></div>
+
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+          <!-- タイトルエリア（コンサルレポート風の左寄せ＋下線） -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 pb-6 mb-10 gap-4"
+          >
+            <div>
+              <h2
+                class="font-en text-xs font-bold tracking-superwide text-brand mb-2"
+              >
+                SUCCESS CASES
+              </h2>
+              <h3 class="text-3xl font-black text-text-primary leading-tight">
+                メーカー転職の成功事例
+              </h3>
+            </div>
+            <p class="text-sm font-medium text-gray-500">
+              確かなデータと実績が証明する、キャリアアップの軌跡。
+            </p>
+          </div>
+
+          <!-- タブエリア（ミニマルデザイン） -->
+          <div
+            class="flex gap-8 border-b border-gray-100 mb-10"
+            id="cs-tabs-container"
+          >
+            <button class="cs-tab active" data-age="20s">20代の実績</button>
+            <button class="cs-tab" data-age="30s">30代〜の実績</button>
+          </div>
+
+          <!-- スライダーラッパー -->
+          <div
+            class="relative w-full overflow-hidden pb-6"
+            id="cases-slider-wrapper"
+          >
+            <!-- 左右のクリッカブルエリア -->
+            <div class="slider-nav-area slider-nav-area--left"></div>
+            <div class="slider-nav-area slider-nav-area--right"></div>
+
+            <!-- スライダーナビゲーションボタン（ソリッド） -->
+            <div
+              class="swiper-button-prev"
+              tabindex="0"
+              role="button"
+              aria-label="Previous slide"
+            ></div>
+            <div
+              class="swiper-button-next"
+              tabindex="0"
+              role="button"
+              aria-label="Next slide"
+            ></div>
+
+            <!-- スライダー本体 -->
+            <div
+              class="case-studies__slider swiper-initialized"
+              id="cases-slider"
+              style="display: block; overflow: hidden"
+            >
+              <div
+                class="swiper-wrapper"
+                id="cases-swiper-wrapper"
+                style="
+                  display: flex;
+                  align-items: stretch;
+                  will-change: transform;
+                "
+              >
+                <!-- JSで動的にスライドが挿入されます -->
+              </div>
+            </div>
+          </div>
+
+          <!-- ページネーション -->
+          <div class="swiper-pagination" id="cases-pagination"></div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- コンサルタント紹介 (横スクロール × プログレスバー) -->
+      <!-- ================================================== -->
+      <section
+        id="consultant"
+        class="py-24 bg-white border-b border-gray-200 relative overflow-hidden"
+      >
+        <div class="section-title-bg text-brand top-10 left-4 lg:left-10">
+          CONSULTANTS
+        </div>
+
+        <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6"
+          >
+            <div>
+              <h2
+                class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+              >
+                PROFESSIONALS
+              </h2>
+              <h3
+                class="text-2xl md:text-3xl font-black text-text-primary leading-tight"
+              >
+                あなたの技術を理解できる人間が、<br
+                  class="hidden md:block"
+                />担当します。
+              </h3>
+            </div>
+
+            <!-- スクロール用の矢印ボタン -->
+            <div class="flex gap-2 hidden md:flex">
+              <button
+                id="consul-prev"
+                class="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:border-brand hover:text-brand text-gray-400 transition cursor-pointer bg-white z-10"
+                aria-label="前へ"
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button
+                id="consul-next"
+                class="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:border-brand hover:text-brand text-gray-400 transition cursor-pointer bg-white z-10"
+                aria-label="次へ"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 横スクロールカルーセル -->
+          <div class="consultant-carousel" id="consultant-carousel">
+            <!-- Consultant 1 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=400&auto=format&fit=crop"
+                    alt="山田 健太"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  MECHANICAL / PRODUCTION
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  山田 健太
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Kenta Yamada
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  現場の解像度が高く、職務経歴書に現れない「真の技術スキル」を言語化し、企業へダイレクトに提案します。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・大手自動車メーカー</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >機械・生産技術</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >247<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 2 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+                    alt="佐藤 亮介"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  ELECTRICAL / CONTROL
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  佐藤 亮介
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Ryosuke Sato
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  次世代技術の動向を把握し、成長企業や新規事業ポジションへの「キャリアチェンジ」提案を得意とします。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・総合電機メーカー</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >電気・制御設計</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >198<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 3 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+                    alt="鈴木 真理"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  QUALITY ASSURANCE
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  鈴木 真理
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Mari Suzuki
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  グローバル展開を進める企業での「英語力を活かしたポジション」や「マネジメント候補」の提案に定評があります。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・専門コンサルタント</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >品質保証・品質管理</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >156<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 4 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                    alt="高橋 健一"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  EMBEDDED / IoT
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  高橋 健一
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Kenichi Takahashi
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  ハードウェアとソフトウェアの境界領域を深く理解。最新のIoT/AI系スタートアップへの支援実績も豊富です。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・大手家電メーカー</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >組み込み・IoT</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >182<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 5 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
+                    alt="伊藤 美咲"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  CHEMICAL / MATERIAL
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  伊藤 美咲
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Misaki Ito
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  専門性の高いR&D領域に特化。中長期的な研究開発ロードマップを見据えた、ブレの無いキャリア提案を実施します。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・大手化学メーカー</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >化学・素材開発（R&D）</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >134<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultant 6 -->
+            <div
+              class="consul-card bg-white border border-gray-200 hover:border-gold/50 transition-colors duration-300 shadow-sm group flex flex-col shrink-0 snap-start w-[280px] md:w-[320px]"
+            >
+              <div class="p-4 border-b border-gray-100 bg-base-light">
+                <div
+                  class="aspect-square overflow-hidden relative border border-gray-200 bg-white"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                    alt="渡辺 翔太"
+                    class="w-full h-full object-cover grayscale mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold m-3 opacity-40 pointer-events-none transition-opacity group-hover:opacity-100"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div
+                  class="text-[10px] font-bold text-gray-400 mb-3 tracking-widest font-en border-b border-gray-100 pb-2 inline-block w-max"
+                >
+                  BIZ DEV / R&D
+                </div>
+                <h4 class="text-xl font-black text-text-primary mb-1">
+                  渡辺 翔太
+                </h4>
+                <div
+                  class="text-[10px] font-en text-gold tracking-widest uppercase mb-4"
+                >
+                  Shota Watanabe
+                </div>
+                <p
+                  class="text-xs text-text-secondary leading-relaxed mb-6 flex-1"
+                >
+                  技術をビジネスに変換するフェーズを支援。VPoEやCTO直下など、ハイクラスエンジニアの経営参画を推進します。
+                </p>
+                <div class="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500"
+                      >バックグラウンド</span
+                    >
+                    <span class="font-bold text-text-primary"
+                      >元・テック系ベンチャー</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">得意領域</span>
+                    <span class="font-bold text-text-primary"
+                      >新規事業開発・CTO候補</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span class="font-bold text-gray-500">担当支援実績</span>
+                    <span class="font-bold text-brand font-en text-sm"
+                      >115<span class="text-[10px] font-sans text-gray-400 ml-1"
+                        >件</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- オリジナルスクロールバー（インジケータ） -->
+          <div class="mt-4 flex flex-col items-center">
+            <div
+              class="flex items-center gap-2 mb-3 text-[10px] font-bold text-gray-400 tracking-[0.2em] font-en uppercase"
+            >
+              <i data-lucide="move-horizontal" class="w-4 h-4 text-gold"></i>
+              Scroll to explore
+            </div>
+            <div
+              class="relative w-full max-w-[240px] h-1 bg-gray-200 rounded-full overflow-hidden"
+            >
+              <div
+                id="consul-scrollbar-thumb"
+                class="absolute top-0 h-full bg-gold rounded-full will-change-[left]"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- サービス利用ステップ -->
+      <section class="py-24 bg-white border-b border-gray-100">
+        <div class="max-w-[800px] mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2
+              class="font-en text-sm font-bold tracking-superwide text-brand mb-2"
+            >
+              FLOW
+            </h2>
+            <h3 class="text-3xl font-black text-text-primary leading-tight">
+              サービス利用ステップ
+            </h3>
+            <p class="text-sm text-text-secondary mt-4">
+              ご登録から入社まで、全サービスを無料でご利用いただけます。
+            </p>
+          </div>
+
+          <div class="relative" id="flow-container">
+            <!-- ガイドレール（グレー固定） + 紫ライン（伸びる） -->
+            <div
+              class="absolute top-0 bottom-0 w-px bg-gray-200 overflow-hidden"
+            >
+              <div class="flow-progress" id="flow-progress"></div>
+            </div>
+
+            <div class="space-y-12">
+              <!-- Step 1 -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row gap-6 md:gap-0 fade-up"
+                data-flow-step="0"
+              >
+                <div
+                  class="md:w-5/12 text-left md:text-right w-full pl-16 md:pl-0"
+                >
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 01
+                  </div>
+                  <h4 class="text-lg font-bold">無料相談予約</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 bg-gold rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary w-full pl-16 md:pl-0"
+                >
+                  フォームより30秒で完了します。情報収集段階でもお気軽にご登録ください。
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row-reverse gap-6 md:gap-0 fade-up"
+                data-flow-step="1"
+              >
+                <div class="md:w-5/12 text-left w-full pl-16 md:pl-0">
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 02
+                  </div>
+                  <h4 class="text-lg font-bold">キャリア面談</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 border-2 border-gold bg-white rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary md:text-right w-full pl-16 md:pl-0"
+                >
+                  オンラインにて、ご経歴の棚卸しや今後の希望を丁寧にヒアリングします。
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row gap-6 md:gap-0 fade-up"
+                data-flow-step="2"
+              >
+                <div
+                  class="md:w-5/12 text-left md:text-right w-full pl-16 md:pl-0"
+                >
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 03
+                  </div>
+                  <h4 class="text-lg font-bold">求人提案</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 border-2 border-gold bg-white rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary w-full pl-16 md:pl-0"
+                >
+                  非公開求人を含め、ご希望にマッチするポジションをご提案します。
+                </div>
+              </div>
+
+              <!-- Step 4（新規：推薦文作成・応募） -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row-reverse gap-6 md:gap-0 fade-up"
+                data-flow-step="3"
+              >
+                <div class="md:w-5/12 text-left w-full pl-16 md:pl-0">
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 04
+                  </div>
+                  <h4 class="text-lg font-bold">推薦文作成・応募</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 border-2 border-gold bg-white rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary md:text-right w-full pl-16 md:pl-0"
+                >
+                  企業ごとに推薦文を作成し、書類通過率を高めた上で応募を代行します。
+                </div>
+              </div>
+
+              <!-- Step 5（旧Step 4） -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row gap-6 md:gap-0 fade-up"
+                data-flow-step="4"
+              >
+                <div
+                  class="md:w-5/12 text-left md:text-right w-full pl-16 md:pl-0"
+                >
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 05
+                  </div>
+                  <h4 class="text-lg font-bold">面接対策・選考</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 border-2 border-gold bg-white rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary w-full pl-16 md:pl-0"
+                >
+                  企業ごとの傾向に合わせた書類添削や模擬面接を実施し、通過率を高めます。
+                </div>
+              </div>
+
+              <!-- Step 6（旧Step 5） -->
+              <div
+                class="relative flex items-center md:justify-between flex-col md:flex-row-reverse gap-6 md:gap-0 fade-up"
+                data-flow-step="5"
+              >
+                <div class="md:w-5/12 text-left w-full pl-16 md:pl-0">
+                  <div
+                    class="text-xs font-en font-bold text-gray-400 tracking-widest mb-1"
+                  >
+                    STEP 06
+                  </div>
+                  <h4 class="text-lg font-bold">条件交渉・入社</h4>
+                </div>
+                <div
+                  class="flow-dot w-3 h-3 bg-gold rounded-full ring-4 ring-white"
+                ></div>
+                <div
+                  class="md:w-5/12 text-sm text-text-secondary md:text-right w-full pl-16 md:pl-0"
+                >
+                  年収交渉や入社日調整を代行。退職交渉のアドバイス等、入社まで伴走します。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-24 bg-white border-b border-gray-200">
+        <div class="max-w-[800px] mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-text-primary mb-2">
+              よくある質問
+            </h2>
+            <p class="text-sm text-gray-500">
+              ご相談前の不安や疑問にお答えします。
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div
+              class="faq-item bg-base-light border border-gray-200 rounded-sm"
+            >
+              <button
+                class="faq-trigger w-full flex justify-between items-center font-bold cursor-pointer text-text-primary p-6 text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  本当にすべて無料ですか？料金はかかりませんか？
+                </div>
+                <i
+                  data-lucide="chevron-down"
+                  class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-body">
+                <div
+                  class="text-gray-600 text-sm px-6 pb-6 pl-[4.25rem] flex items-start gap-3 border-t border-gray-200 pt-4"
+                >
+                  <span class="text-brand font-en font-bold flex-shrink-0"
+                    >A.</span
+                  >
+                  はい、ご相談から求人紹介、面接対策、条件交渉まで、求職者様は「完全無料」でご利用いただけます。企業側からの紹介手数料で運営しております。
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="faq-item bg-base-light border border-gray-200 rounded-sm"
+            >
+              <button
+                class="faq-trigger w-full flex justify-between items-center font-bold cursor-pointer text-text-primary p-6 text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  まだ転職するか決めていませんが、相談だけでも良いですか？
+                </div>
+                <i
+                  data-lucide="chevron-down"
+                  class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-body">
+                <div
+                  class="text-gray-600 text-sm px-6 pb-6 pl-[4.25rem] flex items-start gap-3 border-t border-gray-200 pt-4"
+                >
+                  <span class="text-brand font-en font-bold flex-shrink-0"
+                    >A.</span
+                  >
+                  もちろんです。現在の市場価値の確認や、5年後を見据えたキャリアプランの棚卸しといった情報収集段階から多くの方にご利用いただいております。無理な転職の強要は一切いたしません。
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="faq-item bg-base-light border border-gray-200 rounded-sm"
+            >
+              <button
+                class="faq-trigger w-full flex justify-between items-center font-bold cursor-pointer text-text-primary p-6 text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  登録すると、現職の会社に転職活動がバレませんか？
+                </div>
+                <i
+                  data-lucide="chevron-down"
+                  class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-body">
+                <div
+                  class="text-gray-600 text-sm px-6 pb-6 pl-[4.25rem] flex items-start gap-3 border-t border-gray-200 pt-4"
+                >
+                  <span class="text-brand font-en font-bold flex-shrink-0"
+                    >A.</span
+                  >
+                  ご安心ください。個人情報は厳重に管理しており、ご本人の許可なく企業に情報が開示されることは絶対にありません。
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="faq-item bg-base-light border border-gray-200 rounded-sm"
+            >
+              <button
+                class="faq-trigger w-full flex justify-between items-center font-bold cursor-pointer text-text-primary p-6 text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  しつこく電話やメールが来ないか心配です。
+                </div>
+                <i
+                  data-lucide="chevron-down"
+                  class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-body">
+                <div
+                  class="text-gray-600 text-sm px-6 pb-6 pl-[4.25rem] flex items-start gap-3 border-t border-gray-200 pt-4"
+                >
+                  <span class="text-brand font-en font-bold flex-shrink-0"
+                    >A.</span
+                  >
+                  当社では、求職者様のペースに合わせたサポートを徹底しております。過度な連絡や、希望条件に合わない求人の大量送信などは行いませんのでご安心ください。
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="faq-item bg-base-light border border-gray-200 rounded-sm"
+            >
+              <button
+                class="faq-trigger w-full flex justify-between items-center font-bold cursor-pointer text-text-primary p-6 text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-brand font-en">Q.</span>
+                  転職を強く勧められませんか？
+                </div>
+                <i
+                  data-lucide="chevron-down"
+                  class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-body">
+                <div
+                  class="text-gray-600 text-sm px-6 pb-6 pl-[4.25rem] flex items-start gap-3 border-t border-gray-200 pt-4"
+                >
+                  <span class="text-brand font-en font-bold flex-shrink-0"
+                    >A.</span
+                  >
+                  転職ありきの提案は行いません。まず市場価値を客観的にお伝えし、現職継続も含めてご判断いただきます。「とりあえず市場価値だけ確認したい」という方も多数ご利用いただいております。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- 最適化されたフォームセクション (精密コンサルトーン) -->
+      <!-- ================================================== -->
+      <section
+        id="form"
+        class="py-24 bg-base-gray relative overflow-hidden border-t border-gray-200"
+      >
+        <!-- ジオメトリックな背景アクセント -->
+        <div
+          class="absolute inset-0 bg-grid opacity-30 z-0 pointer-events-none"
+        ></div>
+
+        <div class="max-w-[800px] mx-auto px-6 relative z-10">
+          <!-- フォーム前の心理的ハードルを下げるマイクロコピー -->
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-black text-text-primary mb-4 tracking-tight leading-snug"
+            >
+              まず、話すだけでいい。<br />
+              <span class="text-xl md:text-2xl font-bold text-gray-500"
+                >転職するかどうかは、その後で決めてください。</span
+              >
+            </h2>
+            <div
+              class="flex flex-wrap justify-center gap-4 text-xs font-bold text-brand mt-6"
+            >
+              <span
+                class="flex items-center gap-1 bg-white border border-gold/30 px-3 py-1.5 rounded-sm shadow-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-gold"></i> 初回相談
+                完全無料</span
+              >
+              <span
+                class="flex items-center gap-1 bg-white border border-gold/30 px-3 py-1.5 rounded-sm shadow-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-gold"></i>
+                45分オンライン</span
+              >
+              <span
+                class="flex items-center gap-1 bg-white border border-gold/30 px-3 py-1.5 rounded-sm shadow-sm"
+                ><i data-lucide="check" class="w-3 h-3 text-gold"></i>
+                強引な勧誘なし</span
+              >
+            </div>
+          </div>
+
+          <!-- フォーム本体（ソリッドカード） -->
+          <div
+            class="bg-white border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-sm"
+            style="border-top: 2px solid #c5a059"
+          >
+            <!-- フォームヘッダー -->
+            <div
+              class="p-8 md:p-10 border-b border-gray-100 flex flex-col md:flex-row justify-between md:items-end gap-4 relative overflow-hidden"
+            >
+              <div class="absolute top-0 left-0 w-1 h-full bg-gold"></div>
+              <div class="pl-2">
+                <div
+                  class="font-en text-xs font-bold tracking-widest text-brand mb-2"
+                >
+                  ENTRY FORM
+                </div>
+                <h2
+                  class="text-2xl font-black text-text-primary tracking-tight"
+                >
+                  無料キャリア相談・求人紹介
+                </h2>
+              </div>
+              <div
+                class="text-left md:text-right text-xs font-bold text-gray-400 pl-2 md:pl-0"
+              >
+                最短<span class="text-gold text-xl mx-1 font-en">30</span
+                >秒で入力完了
+              </div>
+            </div>
+
+            <form class="p-8 md:px-12 md:py-10">
+              <!-- プログレスバー（コンサル風ソリッドデザイン） -->
+              <div class="mb-10">
+                <div
+                  class="flex justify-between text-[10px] font-bold font-en tracking-widest mb-3"
+                >
+                  <div
+                    id="step-text-1"
+                    class="text-gold transition-colors duration-300"
+                  >
+                    01. REQUIREMENTS
+                  </div>
+                  <div
+                    id="step-text-2"
+                    class="text-gray-300 transition-colors duration-300"
+                  >
+                    02. PROFILE
+                  </div>
+                </div>
+                <div class="relative w-full h-1 bg-gray-100">
+                  <div
+                    id="form-progress"
+                    class="absolute top-0 left-0 h-full bg-gold transition-all duration-500 ease-out"
+                    style="width: 50%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- ================= STEP 1 ================= -->
+              <div
+                id="step1-content"
+                class="space-y-6 transition-opacity duration-300"
+              >
+                <div>
+                  <label class="form-label"
+                    >希望内容 <span class="req-badge">必須</span></label
+                  >
+                  <div class="relative">
+                    <select
+                      id="intentSelect"
+                      class="form-input cursor-pointer appearance-none"
+                    >
+                      <option value="転職相談をしたい">
+                        まずはキャリアについて相談したい
+                      </option>
+                      <option value="まずは求人情報を見たい">
+                        どのような求人があるか見てみたい
+                      </option>
+                    </select>
+                    <i
+                      data-lucide="chevron-down"
+                      class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+                    ></i>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label"
+                    >現在の職種 <span class="req-badge">必須</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="例: 生産技術 / 品質保証"
+                    class="form-input"
+                  />
+                </div>
+
+                <div>
+                  <label class="form-label"
+                    >メールアドレス <span class="req-badge">必須</span></label
+                  >
+                  <input
+                    type="email"
+                    placeholder="example@email.com"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="pt-6">
+                  <button
+                    type="button"
+                    onclick="goToStep2()"
+                    class="w-full bg-text-primary hover:bg-black text-white py-5 font-bold tracking-widest transition-all duration-300 flex items-center justify-center gap-3 group shadow-md"
+                  >
+                    <span>次へ進む</span>
+                    <span
+                      class="text-[10px] text-gray-400 font-en font-normal border-l border-gray-600 pl-3"
+                      >STEP 1/2</span
+                    >
+                    <i
+                      data-lucide="arrow-right"
+                      class="w-4 h-4 text-white group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ================= STEP 2 ================= -->
+              <div
+                id="step2-content"
+                class="space-y-6 hidden opacity-0 transition-opacity duration-300"
+              >
+                <div>
+                  <label class="form-label"
+                    >氏名 <span class="req-badge">必須</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="山田 太郎"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="form-label"
+                      >電話番号 <span class="opt-badge">任意</span></label
+                    >
+                    <input
+                      type="tel"
+                      placeholder="090-xxxx-xxxx"
+                      class="form-input"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label"
+                      >希望時期 <span class="opt-badge">任意</span></label
+                    >
+                    <div class="relative">
+                      <select class="form-input cursor-pointer appearance-none">
+                        <option>すぐに</option>
+                        <option>3か月以内</option>
+                        <option>未定</option>
+                      </select>
+                      <i
+                        data-lucide="chevron-down"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-8 text-center border-t border-gray-100 mt-8">
+                  <p
+                    class="text-[11px] text-gray-500 mb-6 font-bold tracking-wide"
+                  >
+                    個人情報の取り扱いに同意の上、送信してください。
+                  </p>
+
+                  <div
+                    class="flex flex-col-reverse md:flex-row items-center justify-between gap-6"
+                  >
+                    <button
+                      type="button"
+                      onclick="goToStep1()"
+                      class="text-xs font-bold text-gray-400 hover:text-text-primary transition-colors flex items-center gap-1.5 pb-1 border-b border-transparent hover:border-text-primary"
+                    >
+                      <i data-lucide="arrow-left" class="w-3 h-3"></i>
+                      入力内容を修正
+                    </button>
+
+                    <button
+                      type="button"
+                      class="w-full md:w-auto md:flex-1 bg-cta hover:bg-cta-hover text-white py-5 px-8 font-bold tracking-widest transition-all duration-300 shadow-[0_4px_14px_rgba(245,158,11,0.3)] hover:shadow-[0_6px_20px_rgba(245,158,11,0.45)] flex items-center justify-center gap-2 group rounded-sm"
+                    >
+                      無料で相談を申し込む
+                      <i
+                        data-lucide="arrow-right"
+                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-brand-dark text-gray-400 py-12 text-xs border-t border-gold/30 font-en tracking-wider"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="font-bold text-sm text-white flex items-center gap-2">
+          <img
+            src="./logo/logo.png"
+            alt="GIVE CREATION ロゴ"
+            class="h-4 w-auto object-contain"
+          />
+        </div>
+        <div class="flex gap-6 font-sans font-medium">
+          <a href="#" class="hover:text-white transition">運営会社</a>
+          <a href="#" class="hover:text-white transition"
+            >プライバシーポリシー</a
+          >
+        </div>
+        <p>&copy; Give Creation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div
+      class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3 flex gap-2 z-50"
+    >
+      <a
+        href="#form"
+        class="flex-1 bg-cta hover:bg-cta-hover text-white text-center py-3.5 rounded-sm text-sm font-bold tracking-wider btn-highclass shadow-sm shadow-cta/20"
+      >
+        まずは無料相談
+      </a>
+    </div>
+
+    <script>
+      lucide.createIcons();
+
+      // ヘッダースクロール
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add(
+            "bg-white",
+            "shadow-sm",
+            "border-b",
+            "border-gray-200",
+          );
+          header.classList.remove("bg-[#0d1b2a]/90", "border-white/10");
+          // ナビテキストをダークに
+          header.querySelectorAll("nav a").forEach((a) => {
+            a.classList.remove("text-white/60");
+            a.classList.add("text-gray-600");
+            a.style.setProperty("--tw-text-opacity", "1");
+          });
+          header.querySelector("nav")?.classList.remove("text-white/60");
+          header.querySelector("nav")?.classList.add("text-gray-600");
+        } else {
+          header.classList.remove("bg-white", "shadow-sm", "border-gray-200");
+          header.classList.add("bg-[#0d1b2a]/90", "border-white/10");
+          header.querySelectorAll("nav a").forEach((a) => {
+            a.classList.add("text-white/60");
+            a.classList.remove("text-gray-600");
+          });
+          header.querySelector("nav")?.classList.add("text-white/60");
+          header.querySelector("nav")?.classList.remove("text-gray-600");
+        }
+      });
+
+      // フォームのステップ制御
+      function setIntent(value) {
+        const intentSelect = document.getElementById("intentSelect");
+        if (intentSelect) {
+          for (let i = 0; i < intentSelect.options.length; i++) {
+            if (intentSelect.options[i].value === value) {
+              intentSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+
+      // ==========================================
+      // ロゴ無限スライダーロジック
+      // ==========================================
+      document.addEventListener("DOMContentLoaded", () => {
+        const row1Container = document.getElementById("logo-slider-row1");
+        const row2Container = document.getElementById("logo-slider-row2");
+
+        if (row1Container && row2Container) {
+          // Row 1 (1~16)
+          const row1Images = Array.from(
+            { length: 16 },
+            (_, i) =>
+              `./logo/logo_slider${String(i + 1).padStart(2, "0")}.webp`,
+          );
+          // Row 2 (17~31)
+          const row2Images = Array.from(
+            { length: 15 },
+            (_, i) =>
+              `./logo/logo_slider${String(i + 17).padStart(2, "0")}.webp`,
+          );
+
+          const createLogoElements = (images) => {
+            // アニメーションを滑らかにループさせるために要素を複製
+            const allImages = [...images, ...images];
+            return allImages.map((src) => {
+              const div = document.createElement("div");
+              // 親コンテナのサイズ設定、およびホバー時の色・透明度変化
+              div.className =
+                "flex-shrink-0 w-[140px] md:w-[180px] h-[56px] md:h-[72px] bg-white flex items-center justify-center";
+
+              // onerrorを使用して、画像パスが存在しないローカル環境でも崩れないようにする
+              div.innerHTML = `
+                <img src="${src}" alt="取引企業ロゴ" class="w-full h-full object-contain filter" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="hidden w-full h-full items-center justify-center bg-gray-50 text-gray-400 font-en text-[10px] font-bold tracking-widest">COMPANY</div>
+              `;
+              return div;
+            });
+          };
+
+          const r1Elements = createLogoElements(row1Images);
+          const r2Elements = createLogoElements(row2Images);
+
+          r1Elements.forEach((el) => row1Container.appendChild(el));
+          r2Elements.forEach((el) => row2Container.appendChild(el));
+        }
+      });
+
+      // ==========================================
+      // カルーセル用ロジック (EXCLUSIVE JOBS)
+      // ==========================================
+      const jobData = {
+        production: [
+          {
+            company: "トヨタ系Tier1メーカー",
+            position: "生産技術（管理職候補）",
+            salary: "850-1150",
+            unit: "万円",
+            text: "EV向け新ライン立ち上げプロジェクト。自動化設備の導入から量産化までの統括。",
+          },
+          {
+            company: "大手総合電機メーカー",
+            position: "生産技術（次世代工場DX推進）",
+            salary: "900-1200",
+            unit: "万円",
+            text: "スマートファクトリー化に向けたIoT・AI技術の現場実装とグローバル展開。",
+          },
+          {
+            company: "日系大手半導体製造装置メーカー",
+            position: "生産技術（自動化スペシャリスト）",
+            salary: "800-1100",
+            unit: "万円",
+            text: "最先端半導体プロセスの完全自動化ライン構築。海外ベンダーとの折衝含む。",
+          },
+          {
+            company: "独立系完成車メーカー",
+            position: "生産技術（海外新工場立ち上げ）",
+            salary: "1000-1300",
+            unit: "万円",
+            text: "北米新EV工場の立ち上げ総責任者。現地エンジニアの育成と量産プロセスの確立。",
+          },
+        ],
+        quality: [
+          {
+            company: "大手自動車部品メーカー",
+            position: "品質保証（グローバル統括）",
+            salary: "850-1150",
+            unit: "万円",
+            text: "次世代モビリティ部品の世界基準（IATF16949）に準拠した品質保証体制の再構築。",
+          },
+          {
+            company: "日系大手化学メーカー",
+            position: "品質管理（部長候補）",
+            salary: "900-1200",
+            unit: "万円",
+            text: "半導体向け高機能材料の品質管理マネジメント。海外メガテック企業の監査対応。",
+          },
+          {
+            company: "外資系医療機器メーカー",
+            position: "サプライヤー品質保証（SQE）",
+            salary: "800-1050",
+            unit: "万円",
+            text: "APAC全域のサプライヤー選定・品質監査・継続的改善のリード。英語力歓迎。",
+          },
+          {
+            company: "東証プライム上場 精密機器メーカー",
+            position: "品質保証（新製品開発QA）",
+            salary: "850-1150",
+            unit: "万円",
+            text: "開発の超上流から参画し、AI搭載型新製品の品質基準策定と信頼性評価を主導。",
+          },
+        ],
+        bizdev: [
+          {
+            company: "日系大手重工業メーカー",
+            position: "新規事業開発（脱炭素・GX領域）",
+            salary: "900-1200",
+            unit: "万円",
+            text: "水素・アンモニア等の次世代エネルギー技術を活用した新規ビジネスモデルの構築。",
+          },
+          {
+            company: "大手総合素材メーカー",
+            position: "R&Dマネージャー（次世代電池素材）",
+            salary: "1000-1300",
+            unit: "万円",
+            text: "全固体電池向け新素材の基礎研究〜量産化技術開発の統括。数十億円規模の予算管理。",
+          },
+          {
+            company: "国内最大手電機メーカー",
+            position: "オープンイノベーション推進",
+            salary: "850-1150",
+            unit: "万円",
+            text: "シリコンバレー等のディープテックスタートアップとの資本業務提携、M&A戦略の立案。",
+          },
+          {
+            company: "ロボティクス・ベンチャー",
+            position: "VPoE / プロダクトマネージャー",
+            salary: "1000-1500",
+            unit: "万円",
+            text: "自律移動ロボット（AMR）の開発全体統括。上場準備中のCxO直下ポジション。",
+          },
+        ],
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("he-track");
+        const tabs = document.querySelectorAll(".he-tabs__btn");
+        const dotsContainer = document.getElementById("he-dots");
+        const prevBtn = document.getElementById("he-prev");
+        const nextBtn = document.getElementById("he-next");
+
+        let activeTab = "production";
+        let currentPage = 0;
+        let totalPages = 1;
+
+        function renderCards(tabKey) {
+          if (!track) return;
+          track.innerHTML = "";
+          const items = jobData[tabKey] || [];
+          items.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "he-card";
+            card.innerHTML = `
+              <div class="he-card__logo">
+                <span class="he-card__logo-text">${item.company}</span>
+              </div>
+              <div class="he-card__body">
+                <div class="he-card__meta">
+                  <div class="he-card__position">${item.position}</div>
+                </div>
+                <div class="he-card__salary-row">
+                  <span class="he-card__salary-badge">想定年収</span>
+                  <span class="he-card__salary-value">${item.salary}</span>
+                  <span class="he-card__salary-unit">${item.unit}</span>
+                </div>
+                <div class="he-card__desc-box">
+                  <p class="he-card__text">${item.text}</p>
+                </div>
+              </div>
+            `;
+            track.appendChild(card);
+          });
+          setTimeout(() => {
+            calcPages();
+            track.scrollLeft = 0;
+            updateDots();
+          }, 10);
+        }
+
+        function calcPages() {
+          if (!track) return;
+          const cardW = 260 + 16;
+          const visible = Math.floor(track.clientWidth / cardW) || 1;
+          const itemsCount = jobData[activeTab].length;
+          totalPages = Math.ceil(itemsCount / visible);
+          renderDots();
+        }
+
+        function renderDots() {
+          if (!dotsContainer) return;
+          dotsContainer.innerHTML = "";
+          for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement("span");
+            dot.className = `he-carousel__dot ${i === currentPage ? "is-active" : ""}`;
+            dot.addEventListener("click", () => {
+              const cardW = 260 + 16;
+              const visible = Math.floor(track.clientWidth / cardW) || 1;
+              track.scrollTo({ left: i * visible * cardW, behavior: "smooth" });
+            });
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        function updateDots() {
+          if (!dotsContainer) return;
+          const dots = dotsContainer.querySelectorAll(".he-carousel__dot");
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("is-active", i === currentPage);
+          });
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", (e) => {
+            tabs.forEach((t) => t.classList.remove("is-active"));
+            const target = e.currentTarget;
+            target.classList.add("is-active");
+            activeTab = target.dataset.tab;
+            renderCards(activeTab);
+          });
+        });
+
+        if (track) {
+          track.addEventListener(
+            "scroll",
+            () => {
+              const maxScroll = track.scrollWidth - track.clientWidth;
+              if (maxScroll <= 0) {
+                currentPage = 0;
+              } else {
+                const ratio = track.scrollLeft / maxScroll;
+                currentPage = Math.round(ratio * (totalPages - 1));
+              }
+              updateDots();
+            },
+            { passive: true },
+          );
+
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+
+          track.addEventListener("mousedown", (e) => {
+            isDown = true;
+            track.classList.add("active");
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+          });
+          track.addEventListener("mouseleave", () => {
+            isDown = false;
+            track.classList.remove("active");
+          });
+          track.addEventListener("mouseup", () => {
+            isDown = false;
+            track.classList.remove("active");
+          });
+          track.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 2;
+            track.scrollLeft = scrollLeft - walk;
+          });
+        }
+
+        if (prevBtn && nextBtn && track) {
+          const scrollDir = (dir) => {
+            const cardW = 260 + 16;
+            const visible = Math.floor(track.clientWidth / cardW) || 1;
+            track.scrollBy({
+              left: dir * visible * cardW,
+              behavior: "smooth",
+            });
+          };
+          prevBtn.addEventListener("click", () => scrollDir(-1));
+          nextBtn.addEventListener("click", () => scrollDir(1));
+        }
+
+        window.addEventListener("resize", () => {
+          calcPages();
+          updateDots();
+        });
+
+        renderCards(activeTab);
+      });
+
+      /* ==================================================
+         転職決定事例スライダー (SUCCESS CASES)
+      ================================================== */
+      document.addEventListener("DOMContentLoaded", () => {
+        const cases20s = [
+          {
+            age: "28歳",
+            gender: "女性",
+            tag: "人事 / 組織開発",
+            img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+            before: "中堅機械メーカー 採用担当",
+            after: "大手自動車部品メーカー HRBP",
+            salaryBefore: "650万円",
+            salaryAfter: "850万円",
+            comment: `単なる採用業務から、経営戦略に紐づく人事（HRBP）へのステップアップを希望。<span class="highlight-text"><span class="highlight-bg"></span>制度設計のポテンシャルを言語化</span>し、大幅な年収UPで内定を獲得。`,
+          },
+          {
+            age: "29歳",
+            gender: "男性",
+            tag: "社内SE / DX推進",
+            img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
+            before: "大手SIer プロジェクトマネージャー",
+            after: "大手総合電機メーカー DX推進リード",
+            salaryBefore: "750万円",
+            salaryAfter: "950万円",
+            comment: `SIerから「事業会社側（ユーザー側）」への転職。IT知見だけでなく、<span class="highlight-text"><span class="highlight-bg"></span>製造業のビジネス構造への理解</span>を高く評価していただきました。`,
+          },
+          {
+            age: "28歳",
+            gender: "男性",
+            tag: "グローバル営業",
+            img: "https://images.unsplash.com/photo-1560250097-0b93528c311a2?q=80&w=200&auto=format&fit=crop",
+            before: "機械系専門商社 法人営業",
+            after: "半導体製造装置メーカー 海外営業",
+            salaryBefore: "700万円",
+            salaryAfter: "900万円",
+            comment: `商社からメーカーへの転職。語学力と商材知識の掛け合わせを強みに、<span class="highlight-text"><span class="highlight-bg"></span>成長産業である半導体領域へのシフト</span>を成功させました。`,
+          },
+        ];
+
+        const cases30s = [
+          {
+            age: "34歳",
+            gender: "男性",
+            tag: "生産技術 / マネジメント",
+            img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop",
+            before: "日系完成車メーカー 生産技術",
+            after: "外資系EVメーカー 製造部長候補",
+            salaryBefore: "950万円",
+            salaryAfter: "1,300万円",
+            comment: `日系大手での堅実な経験をベースに、外資系での立ち上げフェーズへ挑戦。自分では<span class="highlight-text"><span class="highlight-bg"></span>アクセスできなかった非公開のCxO直下案件</span>をご提案いただきました。`,
+          },
+          {
+            age: "32歳",
+            gender: "女性",
+            tag: "ソフトウェア開発",
+            img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
+            before: "メガベンチャー バックエンドエンジニア",
+            after: "大手自動車メーカー 車載ソフトウェア開発",
+            salaryBefore: "900万円",
+            salaryAfter: "1,100万円",
+            comment: `WebIT業界から製造業への「越境転職」。ソフトウェア・ファースト化が進むメーカーにおいて、<span class="highlight-text"><span class="highlight-bg"></span>モダンな開発スキルが希少価値</span>となり1,000万の大台を突破。`,
+          },
+          {
+            age: "35歳",
+            gender: "男性",
+            tag: "経営企画 / 人事責任者",
+            img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+            before: "大手素材メーカー 人事（労務・企画）",
+            after: "ディープテック企業 CHRO候補",
+            salaryBefore: "850万円",
+            salaryAfter: "1,050万円",
+            comment: `大企業の細分化された組織から、スタートアップの人事責任者へ。大企業で培った<span class="highlight-text"><span class="highlight-bg"></span>強固な組織基盤を構築するノウハウ</span>をロジカルにアピールしていただきました。`,
+          },
+        ];
+        const SPACE_BETWEEN = 24;
+        const SLIDES_PER_VIEW_PC = 2.2;
+        const SLIDES_PER_VIEW_SP = 1.1;
+        const TRANSITION_DURATION = 400;
+
+        let activeAge = "20s";
+        let data = cases20s;
+        let loopIndex = 1;
+        let isTransitioning = false;
+        let isAnimating = true;
+        let slideWidth = 0;
+
+        const wrapper = document.getElementById("cases-swiper-wrapper");
+        const container = document.getElementById("cases-slider");
+        const paginationContainer = document.getElementById("cases-pagination");
+
+        if (!wrapper || !container) return;
+
+        function getSlidesPerView() {
+          return window.innerWidth <= 768
+            ? SLIDES_PER_VIEW_SP
+            : SLIDES_PER_VIEW_PC;
+        }
+
+        function updateDimensions() {
+          const cw = container.offsetWidth;
+          slideWidth = cw / getSlidesPerView();
+          renderSlides();
+          updateTransform();
+        }
+
+        function getTranslateX(idx) {
+          if (!container || slideWidth === 0) return 0;
+          const cw = container.offsetWidth;
+          const offset = cw / 2 - slideWidth / 2;
+          return -(idx * (slideWidth + SPACE_BETWEEN)) + offset;
+        }
+
+        function updateTransform() {
+          const tx = getTranslateX(loopIndex);
+          wrapper.style.transform = `translate3d(${tx}px, 0px, 0px)`;
+          wrapper.style.transition = isAnimating
+            ? `transform ${TRANSITION_DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`
+            : "none";
+        }
+
+        function triggerHighlight(slideEl) {
+          if (!slideEl) return;
+          const highlights = slideEl.querySelectorAll(".highlight-bg");
+          setTimeout(() => {
+            highlights.forEach((highlight) => {
+              highlight.style.width = "100%";
+            });
+          }, 300);
+        }
+
+        function resetHighlights(wrapperEl) {
+          if (!wrapperEl) return;
+          wrapperEl.querySelectorAll(".highlight-bg").forEach((highlight) => {
+            highlight.style.width = "0";
+          });
+        }
+
+        function createCardHTML(item) {
+          return `
+            <div class="case-study">
+              <div class="case-study__profile">
+                <img src="${item.img}" alt="profile" onerror="this.src='https://placehold.co/100x100/f1f3f7/a1a1aa?text=No+Image'">
+                <div>
+                  <div class="case-study__tags">
+                    <span class="case-study__tag">${item.age}</span>
+                    <span class="case-study__tag">${item.gender}</span>
+                    <span class="case-study__tag">${item.tag}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="case-study__transition">
+                <div class="case-study__before">
+                  <span class="case-study__label">CURRENT</span>
+                  <div class="case-study__company">${item.before}</div>
+                </div>
+                <div class="case-study__after">
+                  <span class="case-study__label">OFFER</span>
+                  <div class="case-study__company">${item.after}</div>
+                </div>
+              </div>
+              <div class="case-study__salary">
+                <span class="case-study__salary-val">${item.salaryBefore}</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 case-study__arrow-icon"></i>
+                <span class="case-study__salary-val after">${item.salaryAfter}</span>
+              </div>
+              <div class="case-study__comment">
+                <p>${item.comment}</p>
+              </div>
+            </div>
+          `;
+        }
+
+        function renderSlides() {
+          const total = data.length;
+          // 無限ループ用に前後を複製
+          const loopSlides = [data[total - 1], ...data, data[0]];
+
+          wrapper.innerHTML = "";
+          loopSlides.forEach((item, i) => {
+            const isActive = i === loopIndex;
+            const slide = document.createElement("div");
+            slide.className = `swiper-slide case-studies__slide ${isActive ? "center-active swiper-slide-active" : ""}`;
+            slide.style.width = slideWidth ? `${slideWidth}px` : "auto";
+            slide.style.flexShrink = "0";
+            slide.style.marginRight = `${SPACE_BETWEEN}px`;
+            slide.style.boxSizing = "border-box";
+            slide.innerHTML = createCardHTML(item);
+            wrapper.appendChild(slide);
+          });
+          lucide.createIcons({ root: wrapper });
+
+          // ページネーション生成
+          const activeDataIndex =
+            loopIndex === 0
+              ? total - 1
+              : loopIndex === total + 1
+                ? 0
+                : loopIndex - 1;
+          paginationContainer.innerHTML = "";
+          data.forEach((_, i) => {
+            const bullet = document.createElement("div");
+            bullet.className = `swiper-pagination-bullet ${i === activeDataIndex ? "swiper-pagination-bullet-active" : ""}`;
+            bullet.onclick = () => goTo(i);
+            paginationContainer.appendChild(bullet);
+          });
+        }
+
+        function slideTo(newIndex) {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          resetHighlights(wrapper);
+          isAnimating = true;
+          loopIndex = newIndex;
+          updateTransform();
+          updatePaginationClass();
+        }
+
+        function updatePaginationClass() {
+          const total = data.length;
+          const activeDataIndex =
+            loopIndex === 0
+              ? total - 1
+              : loopIndex === total + 1
+                ? 0
+                : loopIndex - 1;
+          const bullets = paginationContainer.querySelectorAll(
+            ".swiper-pagination-bullet",
+          );
+          bullets.forEach((b, i) => {
+            if (i === activeDataIndex)
+              b.classList.add("swiper-pagination-bullet-active");
+            else b.classList.remove("swiper-pagination-bullet-active");
+          });
+        }
+
+        wrapper.addEventListener("transitionend", () => {
+          if (!isTransitioning) return;
+          isTransitioning = false;
+          const total = data.length;
+          let finalIndex = loopIndex;
+
+          // ループの端に達したら、アニメーション無しで瞬時に本物の位置へワープ
+          if (loopIndex === 0) {
+            isAnimating = false;
+            loopIndex = total;
+            finalIndex = total;
+            updateTransform();
+          } else if (loopIndex === total + 1) {
+            isAnimating = false;
+            loopIndex = 1;
+            finalIndex = 1;
+            updateTransform();
+          }
+
+          requestAnimationFrame(() => {
+            isAnimating = true;
+          });
+
+          // クラスの付け替えとハイライト発火
+          const slides = wrapper.querySelectorAll(".case-studies__slide");
+          slides.forEach((s) =>
+            s.classList.remove("center-active", "swiper-slide-active"),
+          );
+          if (slides[finalIndex]) {
+            slides[finalIndex].classList.add(
+              "center-active",
+              "swiper-slide-active",
+            );
+            triggerHighlight(slides[finalIndex]);
+          }
+        });
+
+        function prev() {
+          slideTo(loopIndex - 1);
+        }
+        function next() {
+          slideTo(loopIndex + 1);
+        }
+        function goTo(dataIdx) {
+          slideTo(dataIdx + 1);
+        }
+
+        document
+          .querySelector("#cases .swiper-button-prev")
+          .addEventListener("click", prev);
+        document
+          .querySelector("#cases .swiper-button-next")
+          .addEventListener("click", next);
+        document
+          .querySelector("#cases .slider-nav-area--left")
+          .addEventListener("click", prev);
+        document
+          .querySelector("#cases .slider-nav-area--right")
+          .addEventListener("click", next);
+
+        // タブ切り替え
+        const tabs = document.querySelectorAll(".cs-tab");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", (e) => {
+            const age = e.currentTarget.dataset.age;
+            if (activeAge === age) return;
+            tabs.forEach((t) => t.classList.remove("active"));
+            e.currentTarget.classList.add("active");
+            activeAge = age;
+            data = activeAge === "20s" ? cases20s : cases30s;
+
+            isAnimating = false;
+            loopIndex = 1;
+            resetHighlights(wrapper);
+            renderSlides();
+            updateTransform();
+
+            requestAnimationFrame(() => {
+              isAnimating = true;
+              const slides = wrapper.querySelectorAll(".case-studies__slide");
+              if (slides[1]) {
+                slides[1].classList.add("center-active", "swiper-slide-active");
+                triggerHighlight(slides[1]);
+              }
+            });
+          });
+        });
+
+        window.addEventListener("resize", updateDimensions);
+        updateDimensions();
+
+        // 初回ロード時のハイライト発火
+        setTimeout(() => {
+          const slides = wrapper.querySelectorAll(".case-studies__slide");
+          if (slides[1]) {
+            slides[1].classList.add("center-active", "swiper-slide-active");
+            triggerHighlight(slides[1]);
+          }
+        }, 100);
+      });
+
+      /* ==================================================
+         コンサルタント横スクロール & プログレスバー連動 ロジック
+      ================================================== */
+      document.addEventListener("DOMContentLoaded", () => {
+        const cCarousel = document.getElementById("consultant-carousel");
+        const cPrevBtn = document.getElementById("consul-prev");
+        const cNextBtn = document.getElementById("consul-next");
+        const scrollThumb = document.getElementById("consul-scrollbar-thumb");
+
+        if (!cCarousel) return;
+
+        // 矢印ボタンでのスクロール
+        if (cPrevBtn && cNextBtn) {
+          const scrollAmount = 280 + 20; // スマホ基準のカード幅 + gap
+          cPrevBtn.addEventListener("click", () => {
+            cCarousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+          });
+          cNextBtn.addEventListener("click", () => {
+            cCarousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          });
+        }
+
+        // マウスドラッグでのスクロール対応
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        cCarousel.addEventListener("mousedown", (e) => {
+          isDown = true;
+          cCarousel.style.cursor = "grabbing";
+          startX = e.pageX - cCarousel.offsetLeft;
+          scrollLeft = cCarousel.scrollLeft;
+        });
+        cCarousel.addEventListener("mouseleave", () => {
+          isDown = false;
+          cCarousel.style.cursor = "grab";
+        });
+        cCarousel.addEventListener("mouseup", () => {
+          isDown = false;
+          cCarousel.style.cursor = "grab";
+        });
+        cCarousel.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - cCarousel.offsetLeft;
+          const walk = (x - startX) * 2; // スクロール速度
+          cCarousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // オリジナルスクロールバーの連動計算
+        function updateScrollbar() {
+          if (!cCarousel || !scrollThumb) return;
+          const maxScrollLeft = cCarousel.scrollWidth - cCarousel.clientWidth;
+
+          if (maxScrollLeft <= 0) {
+            scrollThumb.style.width = "100%";
+            scrollThumb.style.left = "0%";
+            return;
+          }
+
+          // 表示領域の割合からツマミの幅を算出（最低20%）
+          const thumbWidthPercent = Math.max(
+            20,
+            (cCarousel.clientWidth / cCarousel.scrollWidth) * 100,
+          );
+          scrollThumb.style.width = `${thumbWidthPercent}%`;
+
+          // スクロール割合に応じたツマミのleft位置を計算
+          const scrollRatio = cCarousel.scrollLeft / maxScrollLeft;
+          const maxLeft = 100 - thumbWidthPercent; // ツマミが動ける最大%
+          scrollThumb.style.left = `${scrollRatio * maxLeft}%`;
+        }
+
+        // スクロール時とリサイズ時にバーを更新
+        cCarousel.addEventListener(
+          "scroll",
+          () => {
+            requestAnimationFrame(updateScrollbar);
+          },
+          { passive: true },
+        );
+
+        window.addEventListener("resize", updateScrollbar);
+
+        // 初期化
+        updateScrollbar();
+        // アイコンを再描画（SCROLL TO EXPLOREの矢印用）
+        lucide.createIcons();
+      });
+
+      // ==========================================
+      // FAQ アコーディオン (JS height制御)
+      // ==========================================
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        const item = trigger.closest(".faq-item");
+        const body = item.querySelector(".faq-body");
+        const icon = trigger.querySelector(".faq-icon");
+
+        trigger.addEventListener("click", () => {
+          const isOpen = item.classList.contains("is-open");
+
+          if (isOpen) {
+            // 閉じる: autoの場合は先にpx値を確定させてからrAF×2で0へ
+            body.style.height = body.scrollHeight + "px";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                body.style.height = "0";
+              });
+            });
+            icon.style.transform = "rotate(0deg)";
+            item.classList.remove("is-open");
+          } else {
+            // 開く: scrollHeightを取得してセット
+            body.style.height = body.scrollHeight + "px";
+            // transition完了後にautoにしてリサイズ対応
+            body.addEventListener(
+              "transitionend",
+              () => {
+                if (item.classList.contains("is-open")) {
+                  body.style.height = "auto";
+                }
+              },
+              { once: true },
+            );
+            icon.style.transform = "rotate(180deg)";
+            item.classList.add("is-open");
+          }
+        });
+      });
+
+      // ==========================================
+      // IntersectionObserver: fade-up 汎用
+      // ==========================================
+      const fadeObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".fade-up").forEach((el) => {
+        fadeObserver.observe(el);
+      });
+
+      // ==========================================
+      // 2ステップフォームの切り替えロジック
+      // ==========================================
+      function goToStep2() {
+        const step1 = document.getElementById("step1-content");
+        const step2 = document.getElementById("step2-content");
+        const bar = document.getElementById("form-progress");
+        const text1 = document.getElementById("step-text-1");
+        const text2 = document.getElementById("step-text-2");
+
+        step1.style.opacity = 0;
+        setTimeout(() => {
+          step1.classList.add("hidden");
+          step2.classList.remove("hidden");
+
+          // アイコンの再描画（STEP2内にあるアイコンを表示させるため）
+          lucide.createIcons();
+
+          setTimeout(() => {
+            step2.style.opacity = 1;
+            bar.style.width = "100%";
+            // テキストの色を切り替え
+            text1.classList.remove("text-gold");
+            text1.classList.add("text-gray-300");
+            text2.classList.remove("text-gray-300");
+            text2.classList.add("text-gold");
+          }, 50);
+        }, 300);
+      }
+
+      function goToStep1() {
+        const step1 = document.getElementById("step1-content");
+        const step2 = document.getElementById("step2-content");
+        const bar = document.getElementById("form-progress");
+        const text1 = document.getElementById("step-text-1");
+        const text2 = document.getElementById("step-text-2");
+
+        step2.style.opacity = 0;
+        setTimeout(() => {
+          step2.classList.add("hidden");
+          step1.classList.remove("hidden");
+          setTimeout(() => {
+            step1.style.opacity = 1;
+            bar.style.width = "50%";
+            // テキストの色を戻す
+            text2.classList.remove("text-gold");
+            text2.classList.add("text-gray-300");
+            text1.classList.remove("text-gray-300");
+            text1.classList.add("text-gold");
+          }, 50);
+        }, 300);
+      }
+
+      // ==========================================
+      // FLOW: 線がすーっと伸び続け、各ドット通過時に出現
+      // ==========================================
+      (function () {
+        const container = document.getElementById("flow-container");
+        const progress = document.getElementById("flow-progress");
+        const steps = Array.from(document.querySelectorAll("[data-flow-step]"));
+
+        if (!container || !progress || !steps.length) return;
+
+        const TOTAL_DURATION = 2200; // 線が0→100%になる総時間(ms)
+
+        function getDotRatios() {
+          const containerRect = container.getBoundingClientRect();
+          const h = containerRect.height;
+          return steps.map((step) => {
+            const dot = step.querySelector(".flow-dot");
+            if (!dot) return 0;
+            const dotRect = dot.getBoundingClientRect();
+            const dotCenter = dotRect.top + dotRect.height / 2;
+            return Math.min(
+              Math.max((dotCenter - containerRect.top) / h, 0),
+              1,
+            );
+          });
+        }
+
+        function animateFlow() {
+          const ratios = getDotRatios();
+
+          // 線を止まらず一定速度で100%まで伸ばす
+          progress.style.transition = `height ${TOTAL_DURATION}ms linear`;
+          progress.style.height = "100%";
+
+          // 各ドットへの到達時刻 = ratio × TOTAL_DURATION でsetTimeout
+          ratios.forEach((ratio, i) => {
+            setTimeout(() => {
+              const dot = steps[i].querySelector(".flow-dot");
+              if (dot) dot.classList.add("is-visible");
+              steps[i].classList.add("is-visible");
+            }, ratio * TOTAL_DURATION);
+          });
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                steps.forEach((s) => fadeObserver.unobserve(s));
+                animateFlow();
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        observer.observe(container);
+      })();
+    </script>
+  </body>
+</html>
